@@ -26,9 +26,9 @@
       position:fixed;
       inset:0;
       background:
-        radial-gradient(circle at 15% 18%, rgba(37,99,235,0.22), transparent 30%),
-        radial-gradient(circle at 82% 10%, rgba(34,211,238,0.14), transparent 32%),
-        radial-gradient(circle at 50% 90%, rgba(20,184,166,0.08), transparent 36%);
+        radial-gradient(circle at 15% 18%, rgba(37,99,235,0.20), transparent 30%),
+        radial-gradient(circle at 82% 10%, rgba(34,211,238,0.12), transparent 32%),
+        radial-gradient(circle at 50% 90%, rgba(20,184,166,0.07), transparent 36%);
       z-index:-2;
     }
 
@@ -37,8 +37,8 @@
       position:fixed;
       inset:0;
       background-image:
-        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+        linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px);
       background-size:55px 55px;
       z-index:-1;
       mask-image:linear-gradient(to bottom, rgba(0,0,0,0.75), transparent);
@@ -132,9 +132,9 @@
     .hero{
       min-height:74vh;
       display:grid;
-      grid-template-columns:1.05fr 0.95fr;
+      grid-template-columns:1.1fr 0.9fr;
       align-items:center;
-      gap:70px;
+      gap:80px;
       padding:45px 0 70px;
     }
 
@@ -155,7 +155,7 @@
       line-height:1.08;
       letter-spacing:-2px;
       margin-bottom:26px;
-      max-width:740px;
+      max-width:760px;
       font-weight:900;
     }
 
@@ -212,104 +212,75 @@
       transform:translateY(-4px);
     }
 
-    .insight-panel{
+    .hero-card{
       background:rgba(9,17,29,0.82);
       border:1px solid rgba(148,163,184,0.22);
       border-radius:28px;
-      padding:28px;
+      padding:34px;
       box-shadow:0 25px 90px rgba(0,0,0,0.38);
+      position:relative;
+      overflow:hidden;
     }
 
-    .panel-header{
+    .hero-card::before{
+      content:"";
+      position:absolute;
+      inset:-40%;
+      background:radial-gradient(circle,rgba(34,211,238,0.12),transparent 40%);
+      transform:translate(30%, -20%);
+      pointer-events:none;
+    }
+
+    .hero-card-content{
+      position:relative;
+      z-index:2;
+    }
+
+    .hero-card h3{
+      font-size:1.9rem;
+      line-height:1.2;
+      margin-bottom:16px;
+    }
+
+    .hero-card p{
+      color:#CBD5E1;
+      line-height:1.75;
+      margin-bottom:28px;
+      font-size:1.02rem;
+    }
+
+    .simple-list{
+      display:grid;
+      gap:14px;
+    }
+
+    .simple-item{
       display:flex;
-      justify-content:space-between;
       align-items:center;
-      margin-bottom:24px;
+      gap:12px;
+      padding:16px;
+      border-radius:16px;
+      background:rgba(3,10,20,0.68);
+      border:1px solid rgba(148,163,184,0.12);
       color:#E2E8F0;
     }
 
-    .panel-header span{
-      color:#22C55E;
-      font-weight:800;
+    .dot{
+      width:10px;
+      height:10px;
+      background:#22D3EE;
+      border-radius:50%;
+      box-shadow:0 0 18px rgba(34,211,238,0.8);
+      flex-shrink:0;
     }
 
-    .panel-title{
-      margin-bottom:20px;
-    }
-
-    .panel-title h3{
-      font-size:1.8rem;
-      margin-bottom:10px;
-    }
-
-    .panel-title p{
-      color:#CBD5E1;
-      line-height:1.65;
-    }
-
-    .process-list{
-      display:grid;
-      gap:14px;
-      margin-top:24px;
-    }
-
-    .process-item{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:16px;
-      padding:18px;
-      border-radius:18px;
-      background:rgba(3,10,20,0.78);
-      border:1px solid rgba(148,163,184,0.13);
-    }
-
-    .process-item div strong{
-      display:block;
-      font-size:1rem;
-      margin-bottom:5px;
-    }
-
-    .process-item div small{
-      color:#94A3B8;
-      line-height:1.5;
-    }
-
-    .tag{
-      padding:8px 12px;
-      border-radius:999px;
-      color:#22D3EE;
-      background:rgba(34,211,238,0.10);
-      border:1px solid rgba(34,211,238,0.22);
-      font-weight:800;
-      white-space:nowrap;
-      font-size:0.85rem;
-    }
-
-    .panel-metrics{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:12px;
+    .mini-note{
       margin-top:22px;
-    }
-
-    .panel-metric{
-      background:rgba(3,10,20,0.62);
-      border:1px solid rgba(148,163,184,0.12);
-      border-radius:16px;
-      padding:16px;
-    }
-
-    .panel-metric span{
+      padding-top:22px;
+      border-top:1px solid rgba(255,255,255,0.08);
       color:#94A3B8;
-      font-size:0.8rem;
-    }
-
-    .panel-metric strong{
-      display:block;
-      color:#22D3EE;
-      margin-top:8px;
-      font-size:1.15rem;
+      line-height:1.6;
+      font-size:0.95rem;
     }
 
     .section{
@@ -545,8 +516,6 @@
       .buttons,.socials{justify-content:center}
 
       .hero h1{font-size:3.1rem}
-      .panel-metrics{grid-template-columns:1fr}
-      .process-item{flex-direction:column;align-items:flex-start;text-align:left}
     }
 
     @media(max-width:768px){
@@ -620,59 +589,33 @@
         </div>
       </div>
 
-      <div class="insight-panel">
-        <div class="panel-header">
-          <strong>Diagnóstico operacional</strong>
-          <span>● Activo</span>
-        </div>
+      <div class="hero-card">
+        <div class="hero-card-content">
+          <h3>Diagnóstico + solución digital</h3>
 
-        <div class="panel-title">
-          <h3>De procesos dispersos a una operación más clara.</h3>
           <p>
-            Identificamos dónde se pierde tiempo, qué tareas se repiten y qué datos pueden ayudarte a decidir mejor.
+            Convertimos problemas operacionales en herramientas concretas para planificar, medir y decidir mejor.
           </p>
-        </div>
 
-        <div class="process-list">
-          <div class="process-item">
-            <div>
-              <strong>Rutas y planificación</strong>
-              <small>Menos improvisación en terreno y mejor uso de recursos.</small>
+          <div class="simple-list">
+            <div class="simple-item">
+              <span class="dot"></span>
+              <span>Procesos más ordenados y menos dependientes de planillas.</span>
             </div>
-            <div class="tag">Optimizar</div>
-          </div>
 
-          <div class="process-item">
-            <div>
-              <strong>Procesos manuales</strong>
-              <small>Automatización de tareas repetitivas y reportes operativos.</small>
+            <div class="simple-item">
+              <span class="dot"></span>
+              <span>Indicadores claros para seguimiento y control diario.</span>
             </div>
-            <div class="tag">Automatizar</div>
-          </div>
 
-          <div class="process-item">
-            <div>
-              <strong>Información dispersa</strong>
-              <small>Datos centralizados para seguimiento, control y decisiones.</small>
+            <div class="simple-item">
+              <span class="dot"></span>
+              <span>Automatizaciones ajustadas a la realidad de cada empresa.</span>
             </div>
-            <div class="tag">Medir</div>
-          </div>
-        </div>
-
-        <div class="panel-metrics">
-          <div class="panel-metric">
-            <span>Foco</span>
-            <strong>Claridad</strong>
           </div>
 
-          <div class="panel-metric">
-            <span>Resultado</span>
-            <strong>Control</strong>
-          </div>
-
-          <div class="panel-metric">
-            <span>Base</span>
-            <strong>Datos</strong>
+          <div class="mini-note">
+            Soluciones pensadas para ser útiles desde el primer uso, no para agregar complejidad.
           </div>
         </div>
       </div>
