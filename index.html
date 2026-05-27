@@ -9,44 +9,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
+
     *{
       margin:0;
       padding:0;
       box-sizing:border-box;
     }
 
-    html{
-      scroll-behavior:smooth;
-    }
-
     body{
       font-family:'Inter',sans-serif;
-      background:#0B0F17;
+      background:#0F1115;
       color:white;
       overflow-x:hidden;
     }
 
-    body::before{
-      content:"";
-      position:fixed;
-      inset:0;
-      background:
-        radial-gradient(circle at 20% 20%, rgba(59,130,246,0.22), transparent 30%),
-        radial-gradient(circle at 80% 10%, rgba(34,211,238,0.18), transparent 28%),
-        radial-gradient(circle at 50% 90%, rgba(20,184,166,0.12), transparent 35%);
-      z-index:-2;
-    }
-
-    body::after{
-      content:"";
-      position:fixed;
-      inset:0;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
-      background-size:60px 60px;
-      mask-image:linear-gradient(to bottom, rgba(0,0,0,0.7), transparent);
-      z-index:-1;
+    html{
+      scroll-behavior:smooth;
     }
 
     .container{
@@ -56,454 +34,458 @@
     }
 
     header{
-      padding:26px 0;
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:1000;
+      backdrop-filter:blur(14px);
+      background:rgba(15,17,21,0.7);
+      border-bottom:1px solid rgba(255,255,255,0.05);
+    }
+
+    .navbar{
       display:flex;
       justify-content:space-between;
       align-items:center;
+      padding:24px 0;
     }
 
     .logo{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      font-size:1.2rem;
+      font-size:1.4rem;
       font-weight:800;
       letter-spacing:2px;
+      color:white;
     }
 
-    .logo-mark{
-      width:40px;
-      height:40px;
-      border-radius:12px;
-      background:linear-gradient(135deg,#3B82F6,#22D3EE);
+    .logo span{
+      color:#22D3EE;
+    }
+
+    nav{
       display:flex;
-      align-items:center;
-      justify-content:center;
-      color:#08111F;
-      font-weight:900;
-      box-shadow:0 0 30px rgba(34,211,238,0.35);
+      gap:30px;
     }
 
     nav a{
-      color:white;
       text-decoration:none;
-      margin-left:30px;
-      opacity:0.75;
-      font-size:0.95rem;
+      color:#BFC7D5;
       transition:0.3s;
+      font-size:0.95rem;
     }
 
     nav a:hover{
-      opacity:1;
       color:#22D3EE;
     }
 
     .hero{
-      min-height:82vh;
-      display:grid;
-      grid-template-columns:1.1fr 0.9fr;
+      min-height:100vh;
+      display:flex;
       align-items:center;
-      gap:50px;
-      padding:70px 0 90px;
+      justify-content:center;
+      position:relative;
+      overflow:hidden;
     }
 
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:9px 14px;
-      border:1px solid rgba(34,211,238,0.35);
+    .glow{
+      position:absolute;
+      width:600px;
+      height:600px;
+      background:radial-gradient(circle,#3B82F6 0%, transparent 70%);
+      opacity:0.18;
+      filter:blur(80px);
+      top:-200px;
+      right:-150px;
+      z-index:0;
+    }
+
+    .glow2{
+      position:absolute;
+      width:500px;
+      height:500px;
+      background:radial-gradient(circle,#22D3EE 0%, transparent 70%);
+      opacity:0.12;
+      filter:blur(90px);
+      bottom:-200px;
+      left:-150px;
+      z-index:0;
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+      text-align:center;
+      max-width:900px;
+    }
+
+    .tag{
+      display:inline-block;
+      padding:10px 18px;
+      border:1px solid rgba(255,255,255,0.08);
       border-radius:999px;
-      color:#A5F3FC;
-      background:rgba(34,211,238,0.08);
-      font-size:0.85rem;
-      margin-bottom:24px;
+      color:#22D3EE;
+      font-size:0.9rem;
+      margin-bottom:30px;
+      background:rgba(255,255,255,0.02);
     }
 
-    .hero-content h1{
-      font-size:4.6rem;
-      line-height:1.05;
-      letter-spacing:-2px;
-      margin-bottom:24px;
-      max-width:780px;
+    .hero h1{
+      font-size:5rem;
+      line-height:1;
+      font-weight:800;
+      margin-bottom:30px;
+      letter-spacing:-3px;
     }
 
     .gradient-text{
-      background:linear-gradient(to right,#60A5FA,#22D3EE,#5EEAD4);
+      background:linear-gradient(to right,#3B82F6,#22D3EE);
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
     }
 
-    .hero-content p{
-      font-size:1.15rem;
+    .hero p{
+      font-size:1.25rem;
       color:#BFC7D5;
-      max-width:650px;
       line-height:1.8;
+      max-width:760px;
+      margin:auto;
     }
 
     .buttons{
-      margin-top:38px;
+      margin-top:45px;
       display:flex;
+      justify-content:center;
+      gap:18px;
       flex-wrap:wrap;
-      gap:14px;
     }
 
     .btn{
-      display:inline-block;
-      padding:15px 24px;
+      padding:16px 32px;
       border-radius:14px;
       text-decoration:none;
-      font-weight:700;
+      font-weight:600;
       transition:0.3s;
     }
 
     .primary{
-      background:linear-gradient(135deg,#3B82F6,#22D3EE);
-      color:#06101E;
-      box-shadow:0 12px 35px rgba(34,211,238,0.22);
+      background:linear-gradient(to right,#3B82F6,#22D3EE);
+      color:white;
+      box-shadow:0 10px 30px rgba(59,130,246,0.25);
     }
 
     .primary:hover{
       transform:translateY(-3px);
-      box-shadow:0 16px 45px rgba(34,211,238,0.32);
     }
 
     .secondary{
-      border:1px solid rgba(255,255,255,0.16);
+      border:1px solid rgba(255,255,255,0.1);
       color:white;
-      background:rgba(255,255,255,0.04);
+      background:rgba(255,255,255,0.03);
     }
 
     .secondary:hover{
       border-color:#22D3EE;
       color:#22D3EE;
-      transform:translateY(-3px);
     }
 
-    .hero-panel{
-      background:rgba(255,255,255,0.055);
-      border:1px solid rgba(255,255,255,0.10);
-      border-radius:28px;
-      padding:28px;
-      backdrop-filter:blur(18px);
-      box-shadow:0 30px 80px rgba(0,0,0,0.35);
-    }
-
-    .panel-top{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      margin-bottom:26px;
-      color:#BFC7D5;
-      font-size:0.9rem;
-    }
-
-    .status{
-      color:#5EEAD4;
-    }
-
-    .metric{
-      padding:20px;
-      border-radius:20px;
-      background:rgba(11,15,23,0.72);
-      border:1px solid rgba(255,255,255,0.08);
-      margin-bottom:16px;
-    }
-
-    .metric span{
-      color:#BFC7D5;
-      font-size:0.85rem;
-    }
-
-    .metric strong{
-      display:block;
-      font-size:2rem;
-      margin-top:8px;
-      color:white;
-    }
-
-    .bar{
-      height:8px;
-      border-radius:999px;
-      background:rgba(255,255,255,0.08);
-      margin-top:14px;
-      overflow:hidden;
-    }
-
-    .bar div{
-      height:100%;
-      border-radius:999px;
-      background:linear-gradient(to right,#3B82F6,#22D3EE);
-    }
-
-    .services{
-      padding:90px 0;
+    section{
+      padding:120px 0;
     }
 
     .section-title{
       text-align:center;
-      font-size:2.7rem;
-      margin-bottom:16px;
-      letter-spacing:-1px;
+      font-size:3rem;
+      margin-bottom:20px;
+      font-weight:800;
     }
 
     .section-subtitle{
       text-align:center;
       color:#BFC7D5;
-      max-width:680px;
-      margin:0 auto 60px;
-      line-height:1.7;
+      max-width:700px;
+      margin:0 auto 70px auto;
+      line-height:1.8;
     }
 
-    .cards{
+    .services-grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:26px;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:28px;
     }
 
-    .card{
-      background:rgba(23,26,33,0.82);
-      padding:34px;
+    .service-card{
+      background:#171A21;
+      border:1px solid rgba(255,255,255,0.05);
       border-radius:24px;
-      transition:0.3s;
-      border:1px solid rgba(255,255,255,0.08);
-      min-height:230px;
+      padding:40px;
+      transition:0.35s;
+      position:relative;
+      overflow:hidden;
     }
 
-    .card:hover{
-      transform:translateY(-7px);
-      border-color:rgba(34,211,238,0.6);
-      box-shadow:0 20px 50px rgba(0,0,0,0.25);
+    .service-card:hover{
+      transform:translateY(-6px);
+      border-color:#22D3EE;
     }
 
-    .icon{
-      width:48px;
-      height:48px;
-      border-radius:14px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:rgba(34,211,238,0.12);
-      color:#22D3EE;
-      font-size:1.4rem;
-      margin-bottom:22px;
+    .service-card::before{
+      content:"";
+      position:absolute;
+      width:180px;
+      height:180px;
+      background:radial-gradient(circle,#22D3EE 0%, transparent 70%);
+      opacity:0.06;
+      top:-60px;
+      right:-60px;
     }
 
-    .card h3{
-      margin-bottom:14px;
-      color:white;
-      font-size:1.25rem;
+    .service-icon{
+      font-size:2rem;
+      margin-bottom:20px;
     }
 
-    .card p{
+    .service-card h3{
+      font-size:1.3rem;
+      margin-bottom:15px;
+    }
+
+    .service-card p{
       color:#BFC7D5;
       line-height:1.7;
-      font-size:0.98rem;
     }
 
-    .contact{
-      padding:80px 0 100px;
-      text-align:center;
+    .tech-stack{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:18px;
+      margin-top:60px;
+    }
+
+    .tech{
+      padding:14px 22px;
+      border-radius:999px;
+      background:#171A21;
+      border:1px solid rgba(255,255,255,0.06);
+      color:#22D3EE;
+      font-weight:600;
     }
 
     .contact-box{
-      background:linear-gradient(135deg,rgba(59,130,246,0.18),rgba(34,211,238,0.10));
-      border:1px solid rgba(34,211,238,0.22);
-      border-radius:30px;
-      padding:55px 30px;
+      margin-top:70px;
+      background:linear-gradient(to right,#171A21,#12151C);
+      border:1px solid rgba(255,255,255,0.06);
+      border-radius:28px;
+      padding:60px;
+      text-align:center;
     }
 
     .contact-box h2{
-      font-size:2.4rem;
-      margin-bottom:16px;
+      font-size:2.5rem;
+      margin-bottom:20px;
     }
 
     .contact-box p{
       color:#BFC7D5;
-      margin-bottom:30px;
-      line-height:1.7;
+      margin-bottom:35px;
+      line-height:1.8;
     }
 
     footer{
-      padding:35px 0 55px;
+      padding:40px 0;
+      border-top:1px solid rgba(255,255,255,0.05);
       text-align:center;
-      color:#8F9AAA;
-      font-size:0.9rem;
+      color:#7E8798;
     }
 
     @media(max-width:900px){
-      .hero{
-        grid-template-columns:1fr;
-        text-align:center;
-        padding-top:45px;
+
+      .hero h1{
+        font-size:3.5rem;
       }
 
-      .hero-content p{
-        margin:auto;
-      }
-
-      .buttons{
-        justify-content:center;
-      }
-
-      .hero-content h1{
-        font-size:3.4rem;
-      }
-    }
-
-    @media(max-width:768px){
       nav{
         display:none;
       }
 
-      .hero-content h1{
+      .section-title{
+        font-size:2.2rem;
+      }
+
+    }
+
+    @media(max-width:600px){
+
+      .hero h1{
         font-size:2.8rem;
       }
 
-      .section-title{
-        font-size:2.1rem;
+      .hero p{
+        font-size:1rem;
       }
 
-      .hero-panel{
-        padding:22px;
+      .contact-box{
+        padding:40px 25px;
       }
+
     }
+
   </style>
 </head>
 
 <body>
 
-  <div class="container">
+<header>
 
-    <header>
-      <div class="logo">
-        <div class="logo-mark">N</div>
-        <span>NAVIX LABS</span>
-      </div>
+  <div class="container navbar">
 
-      <nav>
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+    <div class="logo">
+      NAVIX <span>LABS</span>
+    </div>
 
-    <section class="hero" id="home">
-      <div class="hero-content">
-
-        <div class="badge">AI · Data · Logistics Optimization</div>
-
-        <h1>
-          Smart solutions for 
-          <span class="gradient-text">data-driven operations.</span>
-        </h1>
-
-        <p>
-          Navix Labs helps businesses optimize routes, automate workflows and transform operational data into clear, actionable decisions using analytics, artificial intelligence and modern digital tools.
-        </p>
-
-        <div class="buttons">
-          <a class="btn primary" href="mailto:contacto@navixlabs.cl">
-            Contact Us
-          </a>
-
-          <a class="btn secondary" href="#services">
-            Explore Services
-          </a>
-        </div>
-
-      </div>
-
-      <div class="hero-panel">
-        <div class="panel-top">
-          <span>Operational Intelligence</span>
-          <span class="status">● Active</span>
-        </div>
-
-        <div class="metric">
-          <span>Route efficiency</span>
-          <strong>+31%</strong>
-          <div class="bar"><div style="width:78%"></div></div>
-        </div>
-
-        <div class="metric">
-          <span>Automated workflows</span>
-          <strong>24/7</strong>
-          <div class="bar"><div style="width:92%"></div></div>
-        </div>
-
-        <div class="metric">
-          <span>Data visibility</span>
-          <strong>Real-time</strong>
-          <div class="bar"><div style="width:86%"></div></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="services" id="services">
-
-      <h2 class="section-title">Services</h2>
-
-      <p class="section-subtitle">
-        We design intelligent systems that help companies reduce operational friction, improve decision-making and scale with better data.
-      </p>
-
-      <div class="cards">
-
-        <div class="card">
-          <div class="icon">↗</div>
-          <h3>Route Optimization</h3>
-          <p>
-            Intelligent routing tools for logistics, deliveries and fleet management, focused on reducing distance, time and operational costs.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="icon">▦</div>
-          <h3>Data Intelligence</h3>
-          <p>
-            Dashboards, reports and analytics systems that convert business data into useful insights for daily operations.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="icon">⚙</div>
-          <h3>Automation</h3>
-          <p>
-            Digital workflows that reduce manual tasks, connect tools and improve internal processes across teams.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="icon">✦</div>
-          <h3>AI Solutions</h3>
-          <p>
-            Applied artificial intelligence solutions for prediction, optimization, classification and smarter business decisions.
-          </p>
-        </div>
-
-      </div>
-
-    </section>
-
-    <section class="contact" id="contact">
-      <div class="contact-box">
-        <h2>Ready to optimize your operations?</h2>
-        <p>
-          Let’s build a smarter system for your business using data, automation and AI.
-        </p>
-
-        <a class="btn primary" href="mailto:contacto@navixlabs.cl">
-          contacto@navixlabs.cl
-        </a>
-      </div>
-    </section>
-
-    <footer>
-      © 2026 Navix Labs — contacto@navixlabs.cl
-    </footer>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
   </div>
+
+</header>
+
+<section class="hero">
+
+  <div class="glow"></div>
+  <div class="glow2"></div>
+
+  <div class="container hero-content">
+
+    <div class="tag">
+      AI • Data • Automation • Logistics
+    </div>
+
+    <h1>
+      Intelligent <span class="gradient-text">Data & AI</span><br>
+      Solutions for Modern Operations
+    </h1>
+
+    <p>
+      Navix Labs develops intelligent systems for operational optimization,
+      logistics analytics, automation workflows and AI-powered decision making.
+    </p>
+
+    <div class="buttons">
+
+      <a href="mailto:contacto@navixlabs.cl" class="btn primary">
+        Contact Us
+      </a>
+
+      <a href="#services" class="btn secondary">
+        Explore Services
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="services">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      What We Build
+    </h2>
+
+    <p class="section-subtitle">
+      Modern digital infrastructure for businesses seeking smarter operations,
+      intelligent automation and scalable analytics solutions.
+    </p>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon">📍</div>
+        <h3>Route Optimization</h3>
+        <p>
+          Intelligent routing and fleet optimization systems designed to reduce
+          operational costs and improve efficiency.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📊</div>
+        <h3>Data Intelligence</h3>
+        <p>
+          Analytics dashboards and operational insights powered by real-time
+          data processing and visualization.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">⚙️</div>
+        <h3>Automation</h3>
+        <p>
+          Automated workflows, integrations and scalable digital systems for
+          modern businesses.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🤖</div>
+        <h3>AI Solutions</h3>
+        <p>
+          Machine learning and AI-driven technologies built for operational
+          optimization and intelligent decision making.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="tech-stack">
+
+      <div class="tech">Python</div>
+      <div class="tech">AI</div>
+      <div class="tech">GIS</div>
+      <div class="tech">Cloud</div>
+      <div class="tech">Automation</div>
+      <div class="tech">Data Science</div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="contact">
+
+  <div class="container">
+
+    <div class="contact-box">
+
+      <h2>Let’s Build Smarter Systems</h2>
+
+      <p>
+        Contact Navix Labs to explore intelligent solutions for logistics,
+        analytics, automation and AI-driven operations.
+      </p>
+
+      <a href="mailto:contacto@navixlabs.cl" class="btn primary">
+        contacto@navixlabs.cl
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<footer>
+
+  © 2026 Navix Labs — All rights reserved.
+
+</footer>
 
 </body>
 </html>
