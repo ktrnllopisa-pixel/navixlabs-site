@@ -212,106 +212,104 @@
       transform:translateY(-4px);
     }
 
-    .dashboard{
+    .insight-panel{
       background:rgba(9,17,29,0.82);
       border:1px solid rgba(148,163,184,0.22);
       border-radius:28px;
-      padding:24px;
+      padding:28px;
       box-shadow:0 25px 90px rgba(0,0,0,0.38);
     }
 
-    .dashboard-top{
+    .panel-header{
       display:flex;
       justify-content:space-between;
-      margin-bottom:20px;
+      align-items:center;
+      margin-bottom:24px;
       color:#E2E8F0;
-      font-size:0.95rem;
     }
 
-    .status{
+    .panel-header span{
       color:#22C55E;
       font-weight:800;
     }
 
-    .map{
-      height:235px;
-      border-radius:22px;
-      background:
-        radial-gradient(circle at 20% 38%, rgba(34,211,238,0.28), transparent 5%),
-        radial-gradient(circle at 70% 31%, rgba(34,211,238,0.28), transparent 5%),
-        radial-gradient(circle at 82% 78%, rgba(34,211,238,0.28), transparent 5%),
-        linear-gradient(135deg,#06111F,#08101D);
-      position:relative;
-      overflow:hidden;
-      border:1px solid rgba(148,163,184,0.20);
+    .panel-title{
+      margin-bottom:20px;
     }
 
-    .map::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
-      background-size:32px 32px;
+    .panel-title h3{
+      font-size:1.8rem;
+      margin-bottom:10px;
     }
 
-    .route{
-      position:absolute;
-      width:62%;
-      height:48%;
-      border-top:2px solid #22D3EE;
-      border-right:2px solid #22D3EE;
-      border-radius:0 110px 0 0;
-      left:20%;
-      top:30%;
-      filter:drop-shadow(0 0 10px rgba(34,211,238,0.65));
-      animation:pulse 2.8s infinite ease-in-out;
+    .panel-title p{
+      color:#CBD5E1;
+      line-height:1.65;
     }
 
-    @keyframes pulse{
-      0%{opacity:0.55}
-      50%{opacity:1}
-      100%{opacity:0.55}
+    .process-list{
+      display:grid;
+      gap:14px;
+      margin-top:24px;
     }
 
-    .pin{
-      width:15px;
-      height:15px;
-      border-radius:50%;
-      background:#22D3EE;
-      position:absolute;
-      box-shadow:0 0 22px #22D3EE;
+    .process-item{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      padding:18px;
+      border-radius:18px;
+      background:rgba(3,10,20,0.78);
+      border:1px solid rgba(148,163,184,0.13);
     }
 
-    .one{left:20%;top:37%}
-    .two{left:70%;top:30%}
-    .three{left:82%;top:77%}
+    .process-item div strong{
+      display:block;
+      font-size:1rem;
+      margin-bottom:5px;
+    }
 
-    .metrics{
-      margin-top:16px;
+    .process-item div small{
+      color:#94A3B8;
+      line-height:1.5;
+    }
+
+    .tag{
+      padding:8px 12px;
+      border-radius:999px;
+      color:#22D3EE;
+      background:rgba(34,211,238,0.10);
+      border:1px solid rgba(34,211,238,0.22);
+      font-weight:800;
+      white-space:nowrap;
+      font-size:0.85rem;
+    }
+
+    .panel-metrics{
       display:grid;
       grid-template-columns:repeat(3,1fr);
       gap:12px;
+      margin-top:22px;
     }
 
-    .metric{
-      background:rgba(3,10,20,0.78);
-      border:1px solid rgba(148,163,184,0.13);
+    .panel-metric{
+      background:rgba(3,10,20,0.62);
+      border:1px solid rgba(148,163,184,0.12);
       border-radius:16px;
-      padding:17px;
+      padding:16px;
     }
 
-    .metric span{
-      color:#CBD5E1;
-      font-size:0.82rem;
+    .panel-metric span{
+      color:#94A3B8;
+      font-size:0.8rem;
     }
 
-    .metric strong{
+    .panel-metric strong{
       display:block;
-      margin-top:8px;
-      font-size:1.35rem;
       color:#22D3EE;
+      margin-top:8px;
+      font-size:1.15rem;
     }
 
     .section{
@@ -547,7 +545,8 @@
       .buttons,.socials{justify-content:center}
 
       .hero h1{font-size:3.1rem}
-      .metrics{grid-template-columns:1fr}
+      .panel-metrics{grid-template-columns:1fr}
+      .process-item{flex-direction:column;align-items:flex-start;text-align:left}
     }
 
     @media(max-width:768px){
@@ -607,12 +606,12 @@
         <div class="badge">Tecnología aplicada a operaciones reales</div>
 
         <h1>
-          Menos fricción.
-          <span class="gradient">Más control operativo.</span>
+          Ordena tu operación.
+          <span class="gradient">Decide con datos.</span>
         </h1>
 
         <p>
-          Navix Labs ayuda a empresas a ordenar, automatizar y mejorar procesos operacionales usando datos, software e inteligencia artificial aplicada. Nuestro foco es simple: que tu operación sea más clara, medible y eficiente.
+          Ayudamos a empresas a mejorar sus rutas, procesos y coordinación diaria con soluciones digitales simples, medibles y adaptadas a su operación.
         </p>
 
         <div class="buttons">
@@ -621,33 +620,59 @@
         </div>
       </div>
 
-      <div class="dashboard">
-        <div class="dashboard-top">
-          <span>Vista operacional</span>
-          <span class="status">● En seguimiento</span>
+      <div class="insight-panel">
+        <div class="panel-header">
+          <strong>Diagnóstico operacional</strong>
+          <span>● Activo</span>
         </div>
 
-        <div class="map">
-          <div class="route"></div>
-          <div class="pin one"></div>
-          <div class="pin two"></div>
-          <div class="pin three"></div>
+        <div class="panel-title">
+          <h3>De procesos dispersos a una operación más clara.</h3>
+          <p>
+            Identificamos dónde se pierde tiempo, qué tareas se repiten y qué datos pueden ayudarte a decidir mejor.
+          </p>
         </div>
 
-        <div class="metrics">
-          <div class="metric">
-            <span>Planificación</span>
-            <strong>más clara</strong>
+        <div class="process-list">
+          <div class="process-item">
+            <div>
+              <strong>Rutas y planificación</strong>
+              <small>Menos improvisación en terreno y mejor uso de recursos.</small>
+            </div>
+            <div class="tag">Optimizar</div>
           </div>
 
-          <div class="metric">
-            <span>Procesos</span>
-            <strong>menos manuales</strong>
+          <div class="process-item">
+            <div>
+              <strong>Procesos manuales</strong>
+              <small>Automatización de tareas repetitivas y reportes operativos.</small>
+            </div>
+            <div class="tag">Automatizar</div>
           </div>
 
-          <div class="metric">
-            <span>Decisiones</span>
-            <strong>con datos</strong>
+          <div class="process-item">
+            <div>
+              <strong>Información dispersa</strong>
+              <small>Datos centralizados para seguimiento, control y decisiones.</small>
+            </div>
+            <div class="tag">Medir</div>
+          </div>
+        </div>
+
+        <div class="panel-metrics">
+          <div class="panel-metric">
+            <span>Foco</span>
+            <strong>Claridad</strong>
+          </div>
+
+          <div class="panel-metric">
+            <span>Resultado</span>
+            <strong>Control</strong>
+          </div>
+
+          <div class="panel-metric">
+            <span>Base</span>
+            <strong>Datos</strong>
           </div>
         </div>
       </div>
@@ -759,7 +784,7 @@
 
         <div class="socials">
           <a class="btn primary" href="mailto:contacto@navixlabs.cl">Enviar correo</a>
-          <a class="social" href="https://wa.me/56973860127" target="_blank">WhatsApp</a>
+          <a class="social" href="https://wa.me/56912345678" target="_blank">WhatsApp</a>
           <a class="social" href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
           <a class="social" href="https://www.instagram.com/" target="_blank">Instagram</a>
         </div>
