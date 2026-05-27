@@ -6,15 +6,12 @@
 
   <title>Navix Labs | IA, Datos y Optimización Operacional</title>
 
-  <!-- FAVICON -->
   <link rel="icon" type="image/png" href="logo.png">
 
-  <!-- FONT -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
-
     *{
       margin:0;
       padding:0;
@@ -31,8 +28,6 @@
       color:white;
       overflow-x:hidden;
     }
-
-    /* BACKGROUND */
 
     body::before{
       content:"";
@@ -63,13 +58,11 @@
       margin:auto;
     }
 
-    /* HEADER */
-
     header{
       display:flex;
       justify-content:space-between;
       align-items:center;
-      padding:24px 0;
+      padding:22px 0;
       position:sticky;
       top:0;
       backdrop-filter:blur(14px);
@@ -79,22 +72,18 @@
     .logo{
       display:flex;
       align-items:center;
-      gap:14px;
-      font-weight:900;
-      letter-spacing:1px;
-      font-size:1.15rem;
     }
 
-    .real-logo{
-      width:52px;
-      height:52px;
+    .real-logo-wide{
+      width:170px;
+      height:auto;
       object-fit:contain;
-      filter:drop-shadow(0 0 18px rgba(34,211,238,0.35));
+      filter:drop-shadow(0 0 14px rgba(34,211,238,0.22));
       transition:0.35s;
     }
 
-    .real-logo:hover{
-      transform:scale(1.05);
+    .real-logo-wide:hover{
+      transform:scale(1.02);
     }
 
     nav{
@@ -119,21 +108,18 @@
       scroll-margin-top:100px;
     }
 
-    /* HERO */
-
     .hero{
-      min-height:78vh;
+      min-height:72vh;
       display:grid;
       grid-template-columns:1.05fr 0.95fr;
       align-items:center;
       gap:55px;
-      padding:20px 0 60px;
+      padding:20px 0 55px;
     }
 
     .badge{
       display:inline-flex;
       align-items:center;
-      gap:8px;
       padding:10px 16px;
       border-radius:999px;
       border:1px solid rgba(34,211,238,0.28);
@@ -145,8 +131,8 @@
     }
 
     .hero h1{
-      font-size:4.2rem;
-      line-height:1.02;
+      font-size:3.9rem;
+      line-height:1.04;
       letter-spacing:-2px;
       margin-bottom:22px;
       max-width:700px;
@@ -161,7 +147,7 @@
     .hero p{
       color:#BFC7D5;
       line-height:1.8;
-      font-size:1.1rem;
+      font-size:1.08rem;
       max-width:620px;
     }
 
@@ -204,8 +190,6 @@
       transform:translateY(-4px);
     }
 
-    /* DASHBOARD */
-
     .dashboard{
       background:rgba(255,255,255,0.05);
       border:1px solid rgba(255,255,255,0.08);
@@ -235,7 +219,7 @@
     }
 
     .map{
-      height:240px;
+      height:230px;
       border-radius:22px;
       background:
         radial-gradient(circle at 20% 35%, rgba(34,211,238,0.35), transparent 5%),
@@ -311,18 +295,16 @@
     .metric strong{
       display:block;
       margin-top:8px;
-      font-size:1.4rem;
+      font-size:1.35rem;
     }
 
-    /* SECTIONS */
-
     .section{
-      padding:65px 0;
+      padding:55px 0;
     }
 
     .title{
       text-align:center;
-      font-size:2.6rem;
+      font-size:2.5rem;
       margin-bottom:16px;
       letter-spacing:-1px;
     }
@@ -331,12 +313,10 @@
       text-align:center;
       color:#BFC7D5;
       max-width:720px;
-      margin:0 auto 50px;
+      margin:0 auto 45px;
       line-height:1.7;
       font-size:1.02rem;
     }
-
-    /* CARDS */
 
     .grid{
       display:grid;
@@ -381,8 +361,6 @@
       line-height:1.7;
     }
 
-    /* CASES */
-
     .cases{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -413,11 +391,9 @@
       font-size:0.95rem;
     }
 
-    /* CONTACT */
-
     .contact-box{
       text-align:center;
-      padding:55px 30px;
+      padding:50px 30px;
       border-radius:30px;
       background:linear-gradient(135deg,rgba(59,130,246,0.18),rgba(34,211,238,0.08));
       border:1px solid rgba(34,211,238,0.18);
@@ -425,7 +401,7 @@
     }
 
     .contact-box h2{
-      font-size:2.4rem;
+      font-size:2.3rem;
       margin-bottom:16px;
     }
 
@@ -436,16 +412,14 @@
       font-size:1.02rem;
     }
 
-    /* FOOTER */
-
     footer{
-      padding:40px 0 50px;
+      padding:35px 0 45px;
       display:flex;
       justify-content:space-between;
       align-items:center;
       border-top:1px solid rgba(255,255,255,0.06);
       color:#8F9AAA;
-      margin-top:70px;
+      margin-top:55px;
       flex-wrap:wrap;
       gap:20px;
     }
@@ -457,8 +431,8 @@
     }
 
     .footer-left img{
-      width:36px;
-      height:36px;
+      width:44px;
+      height:auto;
       object-fit:contain;
     }
 
@@ -478,10 +452,7 @@
       color:#22D3EE;
     }
 
-    /* MOBILE */
-
     @media(max-width:950px){
-
       .hero{
         grid-template-columns:1fr;
         text-align:center;
@@ -496,22 +467,25 @@
       }
 
       .hero h1{
-        font-size:3.4rem;
+        font-size:3.2rem;
+      }
+
+      .real-logo-wide{
+        width:145px;
       }
     }
 
     @media(max-width:768px){
-
       nav{
         display:none;
       }
 
       .hero h1{
-        font-size:2.7rem;
+        font-size:2.55rem;
       }
 
       .title{
-        font-size:2.1rem;
+        font-size:2.05rem;
       }
 
       .metrics{
@@ -523,7 +497,6 @@
         text-align:center;
       }
     }
-
   </style>
 </head>
 
@@ -532,10 +505,8 @@
   <div class="container">
 
     <header>
-
       <div class="logo">
-        <img src="logo.png" alt="Navix Labs Logo" class="real-logo">
-        <span>NAVIX LABS</span>
+        <img src="logo.png" alt="Navix Labs Logo" class="real-logo-wide">
       </div>
 
       <nav>
@@ -544,24 +515,17 @@
         <a href="#casos">Casos de uso</a>
         <a href="#contacto">Contacto</a>
       </nav>
-
     </header>
 
-    <!-- HERO -->
-
     <section class="hero" id="inicio">
-
       <div>
-
         <div class="badge">
           IA · Datos · Automatización · Optimización
         </div>
 
         <h1>
           Tecnología inteligente para 
-          <span class="gradient">
-            operaciones modernas.
-          </span>
+          <span class="gradient">operaciones modernas.</span>
         </h1>
 
         <p>
@@ -569,7 +533,6 @@
         </p>
 
         <div class="buttons">
-
           <a class="btn primary" href="mailto:contacto@navixlabs.cl">
             Contáctanos
           </a>
@@ -577,32 +540,23 @@
           <a class="btn secondary" href="#servicios">
             Ver servicios
           </a>
-
         </div>
-
       </div>
 
-      <!-- DASHBOARD -->
-
       <div class="dashboard">
-
         <div class="dashboard-top">
           <span>Panel operativo inteligente</span>
           <span class="status">● Activo</span>
         </div>
 
         <div class="map">
-
           <div class="route"></div>
-
           <div class="pin one"></div>
           <div class="pin two"></div>
           <div class="pin three"></div>
-
         </div>
 
         <div class="metrics">
-
           <div class="metric">
             <span>Eficiencia operacional</span>
             <strong>+31%</strong>
@@ -622,17 +576,11 @@
             <span>Optimización IA</span>
             <strong>Smart Routing</strong>
           </div>
-
         </div>
-
       </div>
-
     </section>
 
-    <!-- SERVICIOS -->
-
     <section class="section" id="servicios">
-
       <h2 class="title">Servicios</h2>
 
       <p class="subtitle">
@@ -640,12 +588,9 @@
       </p>
 
       <div class="grid">
-
         <div class="card">
           <div class="icon">↗</div>
-
           <h3>Optimización de rutas</h3>
-
           <p>
             Sistemas inteligentes para logística, distribución y gestión de flotas enfocados en reducir tiempos y costos operacionales.
           </p>
@@ -653,9 +598,7 @@
 
         <div class="card">
           <div class="icon">▦</div>
-
           <h3>Inteligencia de datos</h3>
-
           <p>
             Dashboards, reportes y análisis operacional para convertir datos dispersos en información útil y accionable.
           </p>
@@ -663,9 +606,7 @@
 
         <div class="card">
           <div class="icon">⚙</div>
-
           <h3>Automatización</h3>
-
           <p>
             Automatización de procesos y flujos digitales para reducir tareas manuales y mejorar eficiencia interna.
           </p>
@@ -673,22 +614,15 @@
 
         <div class="card">
           <div class="icon">✦</div>
-
           <h3>Soluciones IA</h3>
-
           <p>
             Inteligencia artificial aplicada a optimización, análisis predictivo y mejora de decisiones operacionales.
           </p>
         </div>
-
       </div>
-
     </section>
 
-    <!-- CASOS -->
-
     <section class="section" id="casos">
-
       <h2 class="title">Casos de uso</h2>
 
       <p class="subtitle">
@@ -696,10 +630,8 @@
       </p>
 
       <div class="cases">
-
         <div class="case">
           <h4>Logística y despacho</h4>
-
           <p>
             Optimización de entregas, planificación de rutas y reducción de tiempos de distribución.
           </p>
@@ -707,7 +639,6 @@
 
         <div class="case">
           <h4>Gestión de flotas</h4>
-
           <p>
             Control operacional, monitoreo y análisis de desempeño para vehículos y equipos móviles.
           </p>
@@ -715,7 +646,6 @@
 
         <div class="case">
           <h4>Operaciones en terreno</h4>
-
           <p>
             Coordinación eficiente de personal técnico, mantenimiento y operaciones distribuidas.
           </p>
@@ -723,25 +653,16 @@
 
         <div class="case">
           <h4>Empresas y pymes</h4>
-
           <p>
             Automatización y digitalización de procesos para operaciones más rápidas y escalables.
           </p>
         </div>
-
       </div>
-
     </section>
 
-    <!-- CONTACT -->
-
     <section class="section" id="contacto">
-
       <div class="contact-box">
-
-        <h2>
-          ¿Listo para operar mejor?
-        </h2>
+        <h2>¿Listo para operar mejor?</h2>
 
         <p>
           Construimos sistemas más inteligentes para operaciones reales.
@@ -750,17 +671,12 @@
         <a class="btn primary" href="mailto:contacto@navixlabs.cl">
           contacto@navixlabs.cl
         </a>
-
       </div>
-
     </section>
 
-    <!-- FOOTER -->
-
     <footer>
-
       <div class="footer-left">
-        <img src="logo.png" alt="Logo">
+        <img src="logo.png" alt="Navix Labs Logo">
         <span>© 2026 Navix Labs</span>
       </div>
 
@@ -770,7 +686,6 @@
         <a href="#casos">Casos de uso</a>
         <a href="mailto:contacto@navixlabs.cl">Contacto</a>
       </div>
-
     </footer>
 
   </div>
