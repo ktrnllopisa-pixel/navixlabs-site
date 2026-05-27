@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Navix Labs</title>
+  <title>Navix Labs | Optimización, Datos e IA</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
     *{
@@ -31,9 +31,9 @@
       position:fixed;
       inset:0;
       background:
-        radial-gradient(circle at 20% 20%, rgba(59,130,246,0.22), transparent 30%),
-        radial-gradient(circle at 80% 10%, rgba(34,211,238,0.18), transparent 28%),
-        radial-gradient(circle at 50% 90%, rgba(20,184,166,0.12), transparent 35%);
+        radial-gradient(circle at 18% 15%, rgba(59,130,246,0.24), transparent 30%),
+        radial-gradient(circle at 82% 8%, rgba(34,211,238,0.20), transparent 28%),
+        radial-gradient(circle at 50% 90%, rgba(20,184,166,0.13), transparent 36%);
       z-index:-2;
     }
 
@@ -45,7 +45,7 @@
         linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
       background-size:60px 60px;
-      mask-image:linear-gradient(to bottom, rgba(0,0,0,0.7), transparent);
+      mask-image:linear-gradient(to bottom, rgba(0,0,0,0.75), transparent);
       z-index:-1;
     }
 
@@ -67,21 +67,44 @@
       align-items:center;
       gap:12px;
       font-size:1.2rem;
-      font-weight:800;
+      font-weight:900;
       letter-spacing:2px;
     }
 
     .logo-mark{
-      width:40px;
-      height:40px;
-      border-radius:12px;
+      width:46px;
+      height:46px;
+      border-radius:15px;
       background:linear-gradient(135deg,#3B82F6,#22D3EE);
       display:flex;
       align-items:center;
       justify-content:center;
-      color:#08111F;
-      font-weight:900;
-      box-shadow:0 0 30px rgba(34,211,238,0.35);
+      color:#06101E;
+      box-shadow:0 0 35px rgba(34,211,238,0.35);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .logo-mark::before{
+      content:"";
+      width:20px;
+      height:20px;
+      border:3px solid #06101E;
+      border-top-color:transparent;
+      border-right-color:transparent;
+      transform:rotate(-45deg);
+      position:absolute;
+    }
+
+    .logo-mark::after{
+      content:"";
+      width:7px;
+      height:7px;
+      background:#06101E;
+      border-radius:50%;
+      position:absolute;
+      right:13px;
+      top:13px;
     }
 
     nav a{
@@ -90,6 +113,7 @@
       margin-left:30px;
       opacity:0.75;
       font-size:0.95rem;
+      font-weight:600;
       transition:0.3s;
     }
 
@@ -101,10 +125,27 @@
     .hero{
       min-height:82vh;
       display:grid;
-      grid-template-columns:1.1fr 0.9fr;
+      grid-template-columns:1.05fr 0.95fr;
       align-items:center;
-      gap:50px;
+      gap:55px;
       padding:70px 0 90px;
+    }
+
+    .fade-in{
+      opacity:0;
+      transform:translateY(24px);
+      animation:fadeIn 0.9s ease forwards;
+    }
+
+    .delay-1{animation-delay:0.15s;}
+    .delay-2{animation-delay:0.3s;}
+    .delay-3{animation-delay:0.45s;}
+
+    @keyframes fadeIn{
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
     }
 
     .badge{
@@ -118,10 +159,11 @@
       background:rgba(34,211,238,0.08);
       font-size:0.85rem;
       margin-bottom:24px;
+      font-weight:700;
     }
 
     .hero-content h1{
-      font-size:4.6rem;
+      font-size:4.5rem;
       line-height:1.05;
       letter-spacing:-2px;
       margin-bottom:24px;
@@ -137,7 +179,7 @@
     .hero-content p{
       font-size:1.15rem;
       color:#BFC7D5;
-      max-width:650px;
+      max-width:660px;
       line-height:1.8;
     }
 
@@ -153,7 +195,7 @@
       padding:15px 24px;
       border-radius:14px;
       text-decoration:none;
-      font-weight:700;
+      font-weight:800;
       transition:0.3s;
     }
 
@@ -165,7 +207,7 @@
 
     .primary:hover{
       transform:translateY(-3px);
-      box-shadow:0 16px 45px rgba(34,211,238,0.32);
+      box-shadow:0 18px 50px rgba(34,211,238,0.38);
     }
 
     .secondary{
@@ -178,65 +220,118 @@
       border-color:#22D3EE;
       color:#22D3EE;
       transform:translateY(-3px);
+      box-shadow:0 12px 35px rgba(34,211,238,0.15);
     }
 
-    .hero-panel{
+    .dashboard{
       background:rgba(255,255,255,0.055);
-      border:1px solid rgba(255,255,255,0.10);
+      border:1px solid rgba(255,255,255,0.11);
       border-radius:28px;
-      padding:28px;
+      padding:24px;
       backdrop-filter:blur(18px);
-      box-shadow:0 30px 80px rgba(0,0,0,0.35);
+      box-shadow:0 30px 90px rgba(0,0,0,0.36);
+      transition:0.35s;
     }
 
-    .panel-top{
+    .dashboard:hover{
+      transform:translateY(-6px);
+      box-shadow:0 35px 100px rgba(34,211,238,0.16);
+      border-color:rgba(34,211,238,0.35);
+    }
+
+    .dashboard-top{
       display:flex;
       justify-content:space-between;
       align-items:center;
-      margin-bottom:26px;
       color:#BFC7D5;
       font-size:0.9rem;
+      margin-bottom:18px;
     }
 
     .status{
       color:#5EEAD4;
+      font-weight:800;
+    }
+
+    .map{
+      height:250px;
+      border-radius:22px;
+      background:
+        radial-gradient(circle at 25% 35%, rgba(34,211,238,0.35), transparent 5%),
+        radial-gradient(circle at 68% 28%, rgba(96,165,250,0.35), transparent 5%),
+        radial-gradient(circle at 75% 72%, rgba(94,234,212,0.35), transparent 5%),
+        linear-gradient(135deg,rgba(15,23,42,0.95),rgba(8,13,22,0.95));
+      border:1px solid rgba(255,255,255,0.08);
+      position:relative;
+      overflow:hidden;
+      margin-bottom:18px;
+    }
+
+    .map::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+      background-size:32px 32px;
+    }
+
+    .route-line{
+      position:absolute;
+      width:62%;
+      height:44%;
+      left:22%;
+      top:30%;
+      border-top:3px solid #22D3EE;
+      border-right:3px solid #22D3EE;
+      border-radius:0 80px 0 0;
+      opacity:0.85;
+      filter:drop-shadow(0 0 10px rgba(34,211,238,0.8));
+    }
+
+    .pin{
+      position:absolute;
+      width:13px;
+      height:13px;
+      background:#22D3EE;
+      border-radius:50%;
+      box-shadow:0 0 18px #22D3EE;
+    }
+
+    .pin.one{left:24%;top:34%;}
+    .pin.two{left:67%;top:27%;}
+    .pin.three{left:75%;top:71%;}
+
+    .dashboard-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
     }
 
     .metric{
-      padding:20px;
-      border-radius:20px;
-      background:rgba(11,15,23,0.72);
+      padding:18px;
+      border-radius:18px;
+      background:rgba(11,15,23,0.78);
       border:1px solid rgba(255,255,255,0.08);
-      margin-bottom:16px;
     }
 
     .metric span{
       color:#BFC7D5;
-      font-size:0.85rem;
+      font-size:0.8rem;
     }
 
     .metric strong{
       display:block;
-      font-size:2rem;
-      margin-top:8px;
-      color:white;
+      font-size:1.5rem;
+      margin-top:7px;
     }
 
-    .bar{
-      height:8px;
-      border-radius:999px;
-      background:rgba(255,255,255,0.08);
-      margin-top:14px;
-      overflow:hidden;
+    section{
+      scroll-margin-top:40px;
     }
 
-    .bar div{
-      height:100%;
-      border-radius:999px;
-      background:linear-gradient(to right,#3B82F6,#22D3EE);
-    }
-
-    .services{
+    .services, .why{
       padding:90px 0;
     }
 
@@ -250,9 +345,10 @@
     .section-subtitle{
       text-align:center;
       color:#BFC7D5;
-      max-width:680px;
+      max-width:720px;
       margin:0 auto 60px;
       line-height:1.7;
+      font-size:1.05rem;
     }
 
     .cards{
@@ -261,19 +357,19 @@
       gap:26px;
     }
 
-    .card{
+    .card, .why-card{
       background:rgba(23,26,33,0.82);
       padding:34px;
       border-radius:24px;
-      transition:0.3s;
+      transition:0.35s;
       border:1px solid rgba(255,255,255,0.08);
       min-height:230px;
     }
 
-    .card:hover{
+    .card:hover, .why-card:hover{
       transform:translateY(-7px);
       border-color:rgba(34,211,238,0.6);
-      box-shadow:0 20px 50px rgba(0,0,0,0.25);
+      box-shadow:0 20px 55px rgba(34,211,238,0.12);
     }
 
     .icon{
@@ -287,18 +383,30 @@
       color:#22D3EE;
       font-size:1.4rem;
       margin-bottom:22px;
+      box-shadow:inset 0 0 18px rgba(34,211,238,0.08);
     }
 
-    .card h3{
+    .card h3, .why-card h3{
       margin-bottom:14px;
       color:white;
       font-size:1.25rem;
     }
 
-    .card p{
+    .card p, .why-card p{
       color:#BFC7D5;
       line-height:1.7;
       font-size:0.98rem;
+    }
+
+    .why-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+      gap:24px;
+    }
+
+    .why-card{
+      min-height:200px;
+      background:linear-gradient(180deg,rgba(23,26,33,0.88),rgba(12,18,28,0.88));
     }
 
     .contact{
@@ -311,6 +419,7 @@
       border:1px solid rgba(34,211,238,0.22);
       border-radius:30px;
       padding:55px 30px;
+      box-shadow:0 30px 90px rgba(0,0,0,0.24);
     }
 
     .contact-box h2{
@@ -347,7 +456,7 @@
       }
 
       .hero-content h1{
-        font-size:3.4rem;
+        font-size:3.3rem;
       }
     }
 
@@ -357,15 +466,19 @@
       }
 
       .hero-content h1{
-        font-size:2.8rem;
+        font-size:2.75rem;
       }
 
       .section-title{
         font-size:2.1rem;
       }
 
-      .hero-panel{
-        padding:22px;
+      .dashboard{
+        padding:20px;
+      }
+
+      .dashboard-grid{
+        grid-template-columns:1fr;
       }
     }
   </style>
@@ -377,108 +490,166 @@
 
     <header>
       <div class="logo">
-        <div class="logo-mark">N</div>
+        <div class="logo-mark"></div>
         <span>NAVIX LABS</span>
       </div>
 
       <nav>
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
+        <a href="#home">Inicio</a>
+        <a href="#services">Servicios</a>
+        <a href="#why">Por qué Navix</a>
+        <a href="#contact">Contacto</a>
       </nav>
     </header>
 
     <section class="hero" id="home">
       <div class="hero-content">
 
-        <div class="badge">AI · Data · Logistics Optimization</div>
+        <div class="badge fade-in">IA · Datos · Logística · Automatización</div>
 
-        <h1>
-          Smart solutions for 
-          <span class="gradient-text">data-driven operations.</span>
+        <h1 class="fade-in delay-1">
+          Optimización inteligente para 
+          <span class="gradient-text">operaciones modernas.</span>
         </h1>
 
-        <p>
-          Navix Labs helps businesses optimize routes, automate workflows and transform operational data into clear, actionable decisions using analytics, artificial intelligence and modern digital tools.
+        <p class="fade-in delay-2">
+          Navix Labs desarrolla sistemas digitales para optimizar rutas, automatizar procesos y convertir datos operacionales en decisiones más rápidas, claras y rentables.
         </p>
 
-        <div class="buttons">
+        <div class="buttons fade-in delay-3">
           <a class="btn primary" href="mailto:contacto@navixlabs.cl">
-            Contact Us
+            Contáctanos
           </a>
 
           <a class="btn secondary" href="#services">
-            Explore Services
+            Ver servicios
           </a>
         </div>
 
       </div>
 
-      <div class="hero-panel">
-        <div class="panel-top">
-          <span>Operational Intelligence</span>
-          <span class="status">● Active</span>
+      <div class="dashboard fade-in delay-2">
+        <div class="dashboard-top">
+          <span>Panel operativo inteligente</span>
+          <span class="status">● En línea</span>
         </div>
 
-        <div class="metric">
-          <span>Route efficiency</span>
-          <strong>+31%</strong>
-          <div class="bar"><div style="width:78%"></div></div>
+        <div class="map">
+          <div class="route-line"></div>
+          <div class="pin one"></div>
+          <div class="pin two"></div>
+          <div class="pin three"></div>
         </div>
 
-        <div class="metric">
-          <span>Automated workflows</span>
-          <strong>24/7</strong>
-          <div class="bar"><div style="width:92%"></div></div>
-        </div>
+        <div class="dashboard-grid">
+          <div class="metric">
+            <span>Eficiencia de rutas</span>
+            <strong>+31%</strong>
+          </div>
 
-        <div class="metric">
-          <span>Data visibility</span>
-          <strong>Real-time</strong>
-          <div class="bar"><div style="width:86%"></div></div>
+          <div class="metric">
+            <span>Visibilidad operativa</span>
+            <strong>Tiempo real</strong>
+          </div>
+
+          <div class="metric">
+            <span>Procesos automatizados</span>
+            <strong>24/7</strong>
+          </div>
+
+          <div class="metric">
+            <span>Decisiones con datos</span>
+            <strong>IA + Analytics</strong>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="services" id="services">
 
-      <h2 class="section-title">Services</h2>
+      <h2 class="section-title">Servicios</h2>
 
       <p class="section-subtitle">
-        We design intelligent systems that help companies reduce operational friction, improve decision-making and scale with better data.
+        Diseñamos soluciones tecnológicas para empresas que necesitan operar mejor, reducir costos y tomar decisiones con información clara.
       </p>
 
       <div class="cards">
 
         <div class="card">
           <div class="icon">↗</div>
-          <h3>Route Optimization</h3>
+          <h3>Optimización de rutas</h3>
           <p>
-            Intelligent routing tools for logistics, deliveries and fleet management, focused on reducing distance, time and operational costs.
+            Herramientas inteligentes para logística, entregas y gestión de flotas, enfocadas en reducir distancia, tiempo y costos operacionales.
           </p>
         </div>
 
         <div class="card">
           <div class="icon">▦</div>
-          <h3>Data Intelligence</h3>
+          <h3>Inteligencia de datos</h3>
           <p>
-            Dashboards, reports and analytics systems that convert business data into useful insights for daily operations.
+            Dashboards, reportes e indicadores para transformar datos dispersos en información útil para la operación diaria.
           </p>
         </div>
 
         <div class="card">
           <div class="icon">⚙</div>
-          <h3>Automation</h3>
+          <h3>Automatización</h3>
           <p>
-            Digital workflows that reduce manual tasks, connect tools and improve internal processes across teams.
+            Flujos digitales para reducir tareas manuales, conectar herramientas y mejorar la eficiencia interna de los equipos.
           </p>
         </div>
 
         <div class="card">
           <div class="icon">✦</div>
-          <h3>AI Solutions</h3>
+          <h3>Soluciones con IA</h3>
           <p>
-            Applied artificial intelligence solutions for prediction, optimization, classification and smarter business decisions.
+            Aplicación de inteligencia artificial para predicción, clasificación, análisis operativo y optimización de decisiones.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="why" id="why">
+
+      <h2 class="section-title">Por qué Navix Labs</h2>
+
+      <p class="section-subtitle">
+        Combinamos analítica, automatización e inteligencia artificial para entregar soluciones prácticas, medibles y adaptadas a la realidad operacional de cada empresa.
+      </p>
+
+      <div class="why-grid">
+
+        <div class="why-card">
+          <div class="icon">−</div>
+          <h3>Menores costos operacionales</h3>
+          <p>
+            Optimizamos rutas y procesos para disminuir tiempos, kilómetros recorridos y uso innecesario de recursos.
+          </p>
+        </div>
+
+        <div class="why-card">
+          <div class="icon">⌁</div>
+          <h3>Ruteo más inteligente</h3>
+          <p>
+            Creamos sistemas capaces de ordenar entregas, flotas y restricciones operativas de forma más eficiente.
+          </p>
+        </div>
+
+        <div class="why-card">
+          <div class="icon">◉</div>
+          <h3>Visibilidad en tiempo real</h3>
+          <p>
+            Centralizamos información clave para que las decisiones no dependan de planillas aisladas o procesos manuales.
+          </p>
+        </div>
+
+        <div class="why-card">
+          <div class="icon">AI</div>
+          <h3>Optimización con IA</h3>
+          <p>
+            Implementamos modelos inteligentes para apoyar decisiones complejas con datos, patrones y automatización.
           </p>
         </div>
 
@@ -488,9 +659,10 @@
 
     <section class="contact" id="contact">
       <div class="contact-box">
-        <h2>Ready to optimize your operations?</h2>
+        <h2>¿Listo para optimizar tu operación?</h2>
+
         <p>
-          Let’s build a smarter system for your business using data, automation and AI.
+          Construyamos una solución más inteligente para tu empresa usando datos, automatización e inteligencia artificial.
         </p>
 
         <a class="btn primary" href="mailto:contacto@navixlabs.cl">
