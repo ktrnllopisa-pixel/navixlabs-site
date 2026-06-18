@@ -17,14 +17,28 @@
       box-sizing:border-box;
     }
 
+    :root{
+      --bg:#030712;
+      --bg-deep:#020617;
+      --text:#F8FAFC;
+      --muted:#CBD5E1;
+      --muted-2:#94A3B8;
+      --line:rgba(255,255,255,0.075);
+      --cyan:#22D3EE;
+      --cyan-soft:#67E8F9;
+      --blue:#3B82F6;
+      --teal:#5EEAD4;
+      --panel:rgba(15,23,42,0.74);
+    }
+
     html{
       scroll-behavior:smooth;
     }
 
     body{
       font-family:'Inter',sans-serif;
-      background:#030712;
-      color:#F8FAFC;
+      background:var(--bg);
+      color:var(--text);
       overflow-x:hidden;
     }
 
@@ -50,6 +64,7 @@
       background-size:58px 58px;
       z-index:-2;
       mask-image:linear-gradient(to bottom, rgba(0,0,0,0.78), transparent 88%);
+      -webkit-mask-image:linear-gradient(to bottom, rgba(0,0,0,0.78), transparent 88%);
     }
 
     .container{
@@ -65,7 +80,7 @@
       display:flex;
       justify-content:space-between;
       align-items:center;
-      padding:30px 0 24px;
+      padding:28px 0 22px;
       position:relative;
       z-index:10;
       background:transparent;
@@ -75,50 +90,103 @@
     }
 
     .logo{
-      display:flex;
+      display:inline-flex;
       align-items:center;
-      gap:15px;
+      gap:14px;
       text-decoration:none;
+      width:fit-content;
+      min-width:0;
     }
 
-    .logo img{
-      width:70px;
-      height:70px;
-      object-fit:contain;
-      filter:drop-shadow(0 0 12px rgba(34,211,238,0.25)) brightness(1.07);
+    .navix-mark{
+      width:62px;
+      height:62px;
+      flex:0 0 62px;
+      display:grid;
+      place-items:center;
+      border-radius:18px;
+      position:relative;
+      isolation:isolate;
+    }
+
+    .navix-mark::before{
+      content:"";
+      position:absolute;
+      inset:6px;
+      border-radius:16px;
+      background:
+        radial-gradient(circle at 28% 24%, rgba(59,130,246,0.22), transparent 42%),
+        radial-gradient(circle at 76% 72%, rgba(34,211,238,0.18), transparent 46%);
+      filter:blur(1px);
+      opacity:0.78;
+      z-index:-1;
+    }
+
+    .navix-mark svg{
+      width:54px;
+      height:54px;
+      display:block;
+      overflow:visible;
+    }
+
+    .mark-line{
+      fill:none;
+      stroke-width:4.2;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+      filter:drop-shadow(0 0 7px rgba(34,211,238,0.24));
+    }
+
+    .mark-line.soft{
+      stroke-width:3.3;
+      opacity:0.9;
+    }
+
+    .mark-dot{
+      fill:#030712;
+      stroke-width:3.3;
+      filter:drop-shadow(0 0 6px rgba(34,211,238,0.28));
     }
 
     .brand{
-      display:flex;
-      flex-direction:column;
+      display:grid;
+      gap:6px;
       line-height:1;
+      transform:translateY(1px);
     }
 
     .brand-main{
-      font-size:1.5rem;
-      font-weight:900;
-      letter-spacing:5px;
       color:#F8FAFC;
+      font-size:1.55rem;
+      line-height:0.95;
+      font-weight:900;
+      letter-spacing:0.34em;
+      text-shadow:0 0 18px rgba(248,250,252,0.08);
     }
 
     .brand-sub{
-      margin-top:8px;
-      display:flex;
+      display:grid;
+      grid-template-columns:40px auto 40px;
       align-items:center;
       gap:10px;
-      color:#22D3EE;
-      font-size:0.68rem;
-      letter-spacing:8px;
-      font-weight:800;
+      color:var(--cyan);
+      font-size:0.69rem;
+      line-height:1;
+      letter-spacing:0.48em;
+      text-indent:0.48em;
+      font-weight:900;
     }
 
     .brand-sub::before,
     .brand-sub::after{
       content:"";
-      width:34px;
+      display:block;
       height:1px;
-      background:#22D3EE;
-      opacity:0.8;
+      background:linear-gradient(90deg, transparent, rgba(34,211,238,0.82));
+    }
+
+    .brand-sub::after{
+      background:linear-gradient(90deg, rgba(34,211,238,0.82), transparent);
     }
 
     nav{
@@ -196,6 +264,7 @@
       background:linear-gradient(to right,#38BDF8,#22D3EE,#5EEAD4);
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
+      background-clip:text;
     }
 
     .hero-copy{
@@ -835,10 +904,20 @@
       gap:12px;
     }
 
-    .footer-left img{
-      width:38px;
-      height:38px;
-      object-fit:contain;
+    .footer-mark{
+      width:34px;
+      height:34px;
+      flex:0 0 34px;
+      display:grid;
+      place-items:center;
+    }
+
+    .footer-mark svg{
+      width:34px;
+      height:34px;
+      display:block;
+      overflow:visible;
+      opacity:0.95;
     }
 
     .footer-links{
@@ -858,6 +937,14 @@
     }
 
     @media(max-width:1050px){
+      header{
+        gap:24px;
+      }
+
+      nav{
+        gap:20px;
+      }
+
       .hero,
       .case-wrapper,
       .offer,
@@ -902,24 +989,45 @@
         padding:18px 0;
       }
 
-      .logo img{
-        width:58px;
-        height:58px;
+      .logo{
+        gap:11px;
+      }
+
+      .navix-mark{
+        width:50px;
+        height:50px;
+        flex-basis:50px;
+        border-radius:15px;
+      }
+
+      .navix-mark svg{
+        width:44px;
+        height:44px;
+      }
+
+      .mark-line{
+        stroke-width:4;
+      }
+
+      .mark-line.soft{
+        stroke-width:3.1;
+      }
+
+      .mark-dot{
+        stroke-width:3.1;
       }
 
       .brand-main{
-        font-size:1.25rem;
-        letter-spacing:4px;
+        font-size:1.22rem;
+        letter-spacing:0.28em;
       }
 
       .brand-sub{
-        font-size:0.6rem;
-        letter-spacing:5px;
-      }
-
-      .brand-sub::before,
-      .brand-sub::after{
-        width:20px;
+        grid-template-columns:26px auto 26px;
+        gap:7px;
+        font-size:0.58rem;
+        letter-spacing:0.38em;
+        text-indent:0.38em;
       }
 
       .hero{
@@ -974,6 +1082,10 @@
         flex-direction:column;
         text-align:center;
       }
+
+      .footer-left{
+        justify-content:center;
+      }
     }
   </style>
 </head>
@@ -981,12 +1093,46 @@
 <body>
 
 <header>
-  <a class="logo" href="#inicio">
-    <img src="logo.png" alt="Navix Labs">
-    <div class="brand">
-      <div class="brand-main">NAVIX</div>
-      <div class="brand-sub">LABS</div>
-    </div>
+  <a class="logo" href="#inicio" aria-label="Navix Labs inicio">
+    <span class="navix-mark" aria-hidden="true">
+      <svg viewBox="0 0 72 72" role="img">
+        <defs>
+          <linearGradient id="navixHeaderGradient" x1="13" y1="13" x2="59" y2="59" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#3B82F6"/>
+            <stop offset="100%" stop-color="#22D3EE"/>
+          </linearGradient>
+        </defs>
+
+        <path
+          class="mark-line"
+          d="M17 16H25.5C33.5 16 38.2 23.2 44.6 30.8C49.6 36.8 53.6 40.3 59 40.3"
+          stroke="url(#navixHeaderGradient)"
+        />
+
+        <path
+          class="mark-line"
+          d="M17 56H25.5C33.5 56 38.2 48.8 44.6 41.2C49.6 35.2 53.6 31.7 59 31.7"
+          stroke="url(#navixHeaderGradient)"
+        />
+
+        <path
+          class="mark-line soft"
+          d="M17 36H25.4C30.9 36 34.4 40.4 38.7 45.2"
+          stroke="url(#navixHeaderGradient)"
+        />
+
+        <circle class="mark-dot" cx="17" cy="16" r="4.4" stroke="url(#navixHeaderGradient)"/>
+        <circle class="mark-dot" cx="59" cy="31.7" r="4.4" stroke="url(#navixHeaderGradient)"/>
+        <circle class="mark-dot" cx="17" cy="36" r="4.4" stroke="url(#navixHeaderGradient)"/>
+        <circle class="mark-dot" cx="59" cy="40.3" r="4.4" stroke="url(#navixHeaderGradient)"/>
+        <circle class="mark-dot" cx="17" cy="56" r="4.4" stroke="url(#navixHeaderGradient)"/>
+      </svg>
+    </span>
+
+    <span class="brand">
+      <span class="brand-main">NAVIX</span>
+      <span class="brand-sub">LABS</span>
+    </span>
   </a>
 
   <nav>
@@ -1427,7 +1573,27 @@
 <footer>
 
   <div class="footer-left">
-    <img src="logo.png" alt="Navix Labs">
+    <span class="footer-mark" aria-hidden="true">
+      <svg viewBox="0 0 72 72">
+        <defs>
+          <linearGradient id="navixFooterGradient" x1="13" y1="13" x2="59" y2="59" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#3B82F6"/>
+            <stop offset="100%" stop-color="#22D3EE"/>
+          </linearGradient>
+        </defs>
+
+        <path class="mark-line" d="M17 16H25.5C33.5 16 38.2 23.2 44.6 30.8C49.6 36.8 53.6 40.3 59 40.3" stroke="url(#navixFooterGradient)"/>
+        <path class="mark-line" d="M17 56H25.5C33.5 56 38.2 48.8 44.6 41.2C49.6 35.2 53.6 31.7 59 31.7" stroke="url(#navixFooterGradient)"/>
+        <path class="mark-line soft" d="M17 36H25.4C30.9 36 34.4 40.4 38.7 45.2" stroke="url(#navixFooterGradient)"/>
+
+        <circle class="mark-dot" cx="17" cy="16" r="4.4" stroke="url(#navixFooterGradient)"/>
+        <circle class="mark-dot" cx="59" cy="31.7" r="4.4" stroke="url(#navixFooterGradient)"/>
+        <circle class="mark-dot" cx="17" cy="36" r="4.4" stroke="url(#navixFooterGradient)"/>
+        <circle class="mark-dot" cx="59" cy="40.3" r="4.4" stroke="url(#navixFooterGradient)"/>
+        <circle class="mark-dot" cx="17" cy="56" r="4.4" stroke="url(#navixFooterGradient)"/>
+      </svg>
+    </span>
+
     <span>© 2026 Navix Labs · Chile</span>
   </div>
 
