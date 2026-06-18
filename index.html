@@ -11,8 +11,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    html{scroll-behavior:smooth}
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
 
     body{
       font-family:'Inter',sans-serif;
@@ -58,13 +65,13 @@
       display:flex;
       justify-content:space-between;
       align-items:center;
-      padding:22px 0;
-      position:sticky;
-      top:0;
-      z-index:100;
+      padding:30px 0 24px;
+      position:relative;
+      z-index:10;
       background:transparent;
-      backdrop-filter:blur(14px);
-      border-bottom:1px solid rgba(255,255,255,0.035);
+      backdrop-filter:none;
+      -webkit-backdrop-filter:none;
+      border-bottom:1px solid rgba(255,255,255,0.055);
     }
 
     .logo{
@@ -128,7 +135,9 @@
       transition:0.25s;
     }
 
-    nav a:hover{color:#22D3EE}
+    nav a:hover{
+      color:#22D3EE;
+    }
 
     .nav-cta{
       padding:12px 16px;
@@ -138,7 +147,9 @@
       color:#67E8F9!important;
     }
 
-    section{scroll-margin-top:110px}
+    section{
+      scroll-margin-top:40px;
+    }
 
     .hero{
       min-height:82vh;
@@ -285,7 +296,10 @@
       color:#CBD5E1;
     }
 
-    .dash-title{font-weight:900;color:#F8FAFC}
+    .dash-title{
+      font-weight:900;
+      color:#F8FAFC;
+    }
 
     .dash-status{
       display:flex;
@@ -330,9 +344,32 @@
       filter:drop-shadow(0 0 8px rgba(34,211,238,0.35));
     }
 
-    .route.r1{width:230px;height:115px;top:72px;left:58px;transform:rotate(-16deg);border-color:#22D3EE}
-    .route.r2{width:210px;height:100px;bottom:68px;right:56px;transform:rotate(19deg);border-color:#3B82F6}
-    .route.r3{width:165px;height:88px;top:126px;right:110px;transform:rotate(-34deg);border-color:#5EEAD4}
+    .route.r1{
+      width:230px;
+      height:115px;
+      top:72px;
+      left:58px;
+      transform:rotate(-16deg);
+      border-color:#22D3EE;
+    }
+
+    .route.r2{
+      width:210px;
+      height:100px;
+      bottom:68px;
+      right:56px;
+      transform:rotate(19deg);
+      border-color:#3B82F6;
+    }
+
+    .route.r3{
+      width:165px;
+      height:88px;
+      top:126px;
+      right:110px;
+      transform:rotate(-34deg);
+      border-color:#5EEAD4;
+    }
 
     .pin{
       position:absolute;
@@ -362,13 +399,27 @@
       border-radius:20px;
       background:rgba(2,6,23,0.82);
       border:1px solid rgba(34,211,238,0.18);
-      backdrop-filter:blur(14px);
       box-shadow:0 18px 50px rgba(0,0,0,0.34);
     }
 
-    .floating-card small{color:#94A3B8;font-weight:800}
-    .floating-card strong{display:block;margin-top:8px;font-size:2rem;color:#67E8F9}
-    .floating-card p{margin-top:6px;color:#CBD5E1;font-size:0.88rem;line-height:1.55}
+    .floating-card small{
+      color:#94A3B8;
+      font-weight:800;
+    }
+
+    .floating-card strong{
+      display:block;
+      margin-top:8px;
+      font-size:2rem;
+      color:#67E8F9;
+    }
+
+    .floating-card p{
+      margin-top:6px;
+      color:#CBD5E1;
+      font-size:0.88rem;
+      line-height:1.55;
+    }
 
     .dash-metrics{
       position:relative;
@@ -385,10 +436,22 @@
       border:1px solid rgba(255,255,255,0.075);
     }
 
-    .dash-metric strong{display:block;color:#67E8F9;font-size:1.5rem;margin-bottom:5px}
-    .dash-metric span{color:#94A3B8;font-size:0.78rem;line-height:1.35}
+    .dash-metric strong{
+      display:block;
+      color:#67E8F9;
+      font-size:1.5rem;
+      margin-bottom:5px;
+    }
 
-    .section{padding:92px 0}
+    .dash-metric span{
+      color:#94A3B8;
+      font-size:0.78rem;
+      line-height:1.35;
+    }
+
+    .section{
+      padding:92px 0;
+    }
 
     .section-head{
       max-width:790px;
@@ -441,7 +504,10 @@
       margin-bottom:8px;
     }
 
-    .proof-card span{color:#CBD5E1;line-height:1.55}
+    .proof-card span{
+      color:#CBD5E1;
+      line-height:1.55;
+    }
 
     .case-wrapper{
       display:grid;
@@ -482,7 +548,10 @@
       color:#67E8F9;
     }
 
-    .case-card h3{font-size:1.65rem;margin-bottom:20px}
+    .case-card h3{
+      font-size:1.65rem;
+      margin-bottom:20px;
+    }
 
     .case-row{
       display:flex;
@@ -493,9 +562,18 @@
       color:#CBD5E1;
     }
 
-    .case-row:last-child{border-bottom:0}
-    .case-row strong{color:#F8FAFC;text-align:right}
-    .case-card.after .case-row strong{color:#67E8F9}
+    .case-row:last-child{
+      border-bottom:0;
+    }
+
+    .case-row strong{
+      color:#F8FAFC;
+      text-align:right;
+    }
+
+    .case-card.after .case-row strong{
+      color:#67E8F9;
+    }
 
     .savings-band{
       margin-top:24px;
@@ -509,16 +587,25 @@
       gap:20px;
     }
 
-    .savings-band strong{font-size:2.2rem;color:#67E8F9}
-    .savings-band span{color:#CBD5E1;line-height:1.55}
+    .savings-band strong{
+      font-size:2.2rem;
+      color:#67E8F9;
+    }
 
-    .steps,.deliverables{
+    .savings-band span{
+      color:#CBD5E1;
+      line-height:1.55;
+    }
+
+    .steps,
+    .deliverables{
       display:grid;
       grid-template-columns:repeat(4,1fr);
       gap:22px;
     }
 
-    .step,.deliverable{
+    .step,
+    .deliverable{
       padding:30px;
       border-radius:24px;
       background:rgba(15,23,42,0.72);
@@ -532,7 +619,8 @@
       box-shadow:0 24px 70px rgba(34,211,238,0.08);
     }
 
-    .step-number,.deliverable-icon{
+    .step-number,
+    .deliverable-icon{
       width:50px;
       height:50px;
       display:flex;
@@ -551,8 +639,18 @@
       font-size:1.25rem;
     }
 
-    .step h3,.deliverable h3{font-size:1.18rem;margin-bottom:12px}
-    .step p,.deliverable p{color:#CBD5E1;line-height:1.7;font-size:0.98rem}
+    .step h3,
+    .deliverable h3{
+      font-size:1.18rem;
+      margin-bottom:12px;
+    }
+
+    .step p,
+    .deliverable p{
+      color:#CBD5E1;
+      line-height:1.7;
+      font-size:0.98rem;
+    }
 
     .industries{
       display:flex;
@@ -579,7 +677,8 @@
       align-items:stretch;
     }
 
-    .offer-main,.offer-price{
+    .offer-main,
+    .offer-price{
       border-radius:32px;
       padding:42px;
       background:rgba(15,23,42,0.78);
@@ -593,13 +692,18 @@
       background:radial-gradient(circle at 30% 0%, rgba(34,211,238,0.14), transparent 34%),rgba(15,23,42,0.82);
     }
 
-    .offer-main h2,.offer-price h2{
+    .offer-main h2,
+    .offer-price h2{
       font-size:2.25rem;
       letter-spacing:-1px;
       margin-bottom:16px;
     }
 
-    .offer-main p,.offer-price p{color:#CBD5E1;line-height:1.8}
+    .offer-main p,
+    .offer-price p{
+      color:#CBD5E1;
+      line-height:1.8;
+    }
 
     .offer-list{
       display:grid;
@@ -646,7 +750,10 @@
       color:#F8FAFC;
     }
 
-    .payment-grid{display:grid;gap:10px}
+    .payment-grid{
+      display:grid;
+      gap:10px;
+    }
 
     .payment-grid div{
       display:flex;
@@ -705,7 +812,11 @@
       margin-bottom:12px;
     }
 
-    .final-cta p{color:#CBD5E1;line-height:1.75;max-width:720px}
+    .final-cta p{
+      color:#CBD5E1;
+      line-height:1.75;
+      max-width:720px;
+    }
 
     footer{
       padding:35px 0 45px;
@@ -718,39 +829,151 @@
       gap:20px;
     }
 
-    .footer-left{display:flex;align-items:center;gap:12px}
-    .footer-left img{width:38px;height:38px;object-fit:contain}
-    .footer-links{display:flex;gap:22px;flex-wrap:wrap}
-    .footer-links a{color:#8F9AAA;text-decoration:none;transition:0.25s}
-    .footer-links a:hover{color:#22D3EE}
+    .footer-left{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .footer-left img{
+      width:38px;
+      height:38px;
+      object-fit:contain;
+    }
+
+    .footer-links{
+      display:flex;
+      gap:22px;
+      flex-wrap:wrap;
+    }
+
+    .footer-links a{
+      color:#8F9AAA;
+      text-decoration:none;
+      transition:0.25s;
+    }
+
+    .footer-links a:hover{
+      color:#22D3EE;
+    }
 
     @media(max-width:1050px){
-      .hero,.case-wrapper,.offer,.final-cta{grid-template-columns:1fr}
-      .hero{text-align:center}
-      .hero-copy{margin:auto}
-      .buttons,.hero-trust{justify-content:center}
-      h1{font-size:3.6rem}
-      .proof-grid,.steps,.deliverables{grid-template-columns:repeat(2,1fr)}
-      .final-cta{text-align:center}
+      .hero,
+      .case-wrapper,
+      .offer,
+      .final-cta{
+        grid-template-columns:1fr;
+      }
+
+      .hero{
+        text-align:center;
+      }
+
+      .hero-copy{
+        margin:auto;
+      }
+
+      .buttons,
+      .hero-trust{
+        justify-content:center;
+      }
+
+      h1{
+        font-size:3.6rem;
+      }
+
+      .proof-grid,
+      .steps,
+      .deliverables{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .final-cta{
+        text-align:center;
+      }
     }
 
     @media(max-width:760px){
-      nav{display:none}
-      header{padding:18px 0}
-      .logo img{width:58px;height:58px}
-      .brand-main{font-size:1.25rem;letter-spacing:4px}
-      .brand-sub{font-size:0.6rem;letter-spacing:5px}
-      .brand-sub::before,.brand-sub::after{width:20px}
-      .hero{padding:48px 0 62px;gap:42px}
-      h1{font-size:2.65rem;letter-spacing:-1.8px}
-      .title{font-size:2.05rem}
-      .dash-metrics,.proof-grid,.steps,.deliverables{grid-template-columns:1fr}
-      .floating-card{position:relative;top:auto;right:auto;width:auto;margin-top:14px}
-      .map-panel{min-height:260px}
-      .savings-band{flex-direction:column;text-align:center}
-      .offer-main,.offer-price,.final-cta{padding:30px}
-      .final-cta h2{font-size:2rem}
-      footer{flex-direction:column;text-align:center}
+      nav{
+        display:none;
+      }
+
+      header{
+        padding:18px 0;
+      }
+
+      .logo img{
+        width:58px;
+        height:58px;
+      }
+
+      .brand-main{
+        font-size:1.25rem;
+        letter-spacing:4px;
+      }
+
+      .brand-sub{
+        font-size:0.6rem;
+        letter-spacing:5px;
+      }
+
+      .brand-sub::before,
+      .brand-sub::after{
+        width:20px;
+      }
+
+      .hero{
+        padding:48px 0 62px;
+        gap:42px;
+      }
+
+      h1{
+        font-size:2.65rem;
+        letter-spacing:-1.8px;
+      }
+
+      .title{
+        font-size:2.05rem;
+      }
+
+      .dash-metrics,
+      .proof-grid,
+      .steps,
+      .deliverables{
+        grid-template-columns:1fr;
+      }
+
+      .floating-card{
+        position:relative;
+        top:auto;
+        right:auto;
+        width:auto;
+        margin-top:14px;
+      }
+
+      .map-panel{
+        min-height:260px;
+      }
+
+      .savings-band{
+        flex-direction:column;
+        text-align:center;
+      }
+
+      .offer-main,
+      .offer-price,
+      .final-cta{
+        padding:30px;
+      }
+
+      .final-cta h2{
+        font-size:2rem;
+      }
+
+      footer{
+        flex-direction:column;
+        text-align:center;
+      }
     }
   </style>
 </head>
@@ -780,8 +1003,12 @@
 <div class="container">
 
 <section class="hero" id="inicio">
+
   <div>
-    <div class="badge"><span></span>Optimización logística para empresas con reparto</div>
+    <div class="badge">
+      <span></span>
+      Optimización logística para empresas con reparto
+    </div>
 
     <h1>
       Reduce costos de reparto
@@ -797,7 +1024,10 @@
       <a class="btn primary" href="https://wa.me/56973860127?text=Hola%20Navix%20Labs%2C%20quiero%20saber%20cu%C3%A1nto%20puedo%20ahorrar%20optimizando%20mis%20rutas.%0A%0ANombre%3A%20%0AEmpresa%3A%20%0ARubro%3A%20%0ACiudad%3A%20%0ACantidad%20de%20veh%C3%ADculos%3A%20%0ACantidad%20aprox.%20de%20entregas%20diarias%3A%20%0A%C2%BFTienen%20las%20rutas%20en%20Excel%3F%3A%20" target="_blank">
         Quiero saber cuánto puedo ahorrar →
       </a>
-      <a class="btn secondary" href="#caso">Ver caso de ejemplo</a>
+
+      <a class="btn secondary" href="#caso">
+        Ver caso de ejemplo
+      </a>
     </div>
 
     <div class="hero-trust">
@@ -809,16 +1039,22 @@
   </div>
 
   <div class="dashboard">
+
     <div class="dash-top">
       <div class="dash-title">Dashboard operativo</div>
-      <div class="dash-status"><span></span>Ruta optimizada</div>
+      <div class="dash-status">
+        <span></span>
+        Ruta optimizada
+      </div>
     </div>
 
     <div class="map-panel">
       <div class="map-grid"></div>
+
       <div class="route r1"></div>
       <div class="route r2"></div>
       <div class="route r3"></div>
+
       <div class="pin p1"></div>
       <div class="pin p2"></div>
       <div class="pin p3"></div>
@@ -836,27 +1072,66 @@
     </div>
 
     <div class="dash-metrics">
-      <div class="dash-metric"><strong>97 km</strong><span>distancia optimizada</span></div>
-      <div class="dash-metric"><strong>4.8 h</strong><span>tiempo operativo</span></div>
-      <div class="dash-metric"><strong>18</strong><span>entregas ordenadas</span></div>
-      <div class="dash-metric"><strong>3</strong><span>vehículos asignados</span></div>
+      <div class="dash-metric">
+        <strong>97 km</strong>
+        <span>distancia optimizada</span>
+      </div>
+
+      <div class="dash-metric">
+        <strong>4.8 h</strong>
+        <span>tiempo operativo</span>
+      </div>
+
+      <div class="dash-metric">
+        <strong>18</strong>
+        <span>entregas ordenadas</span>
+      </div>
+
+      <div class="dash-metric">
+        <strong>3</strong>
+        <span>vehículos asignados</span>
+      </div>
     </div>
+
   </div>
+
 </section>
 
 <section class="section">
+
   <div class="proof-grid">
-    <div class="proof-card"><strong>-31%</strong><span>distancia recorrida en caso simulado</span></div>
-    <div class="proof-card"><strong>-1.2 h</strong><span>menos operación diaria estimada</span></div>
-    <div class="proof-card"><strong>24 h</strong><span>para una primera evaluación</span></div>
-    <div class="proof-card"><strong>20</strong><span>direcciones iniciales por diagnóstico</span></div>
+    <div class="proof-card">
+      <strong>-31%</strong>
+      <span>distancia recorrida en caso simulado</span>
+    </div>
+
+    <div class="proof-card">
+      <strong>-1.2 h</strong>
+      <span>menos operación diaria estimada</span>
+    </div>
+
+    <div class="proof-card">
+      <strong>24 h</strong>
+      <span>para una primera evaluación</span>
+    </div>
+
+    <div class="proof-card">
+      <strong>20</strong>
+      <span>direcciones iniciales por diagnóstico</span>
+    </div>
   </div>
+
 </section>
 
 <section class="section" id="caso">
+
   <div class="section-head">
     <div class="eyebrow">Caso de ejemplo</div>
-    <h2 class="title">De rutas manuales a una operación medible.</h2>
+
+    <h2 class="title">
+      De rutas manuales a una operación medible.
+    </h2>
+
     <p class="subtitle">
       El objetivo no es vender software complejo. Es mostrarle a la empresa dónde está perdiendo kilómetros,
       tiempo y dinero, y cómo se vería una planificación más eficiente.
@@ -864,25 +1139,69 @@
   </div>
 
   <div class="case-wrapper">
+
     <div class="case-card">
       <div class="case-label">Antes</div>
+
       <h3>Planificación manual</h3>
-      <div class="case-row"><span>Distancia diaria</span><strong>142 km</strong></div>
-      <div class="case-row"><span>Tiempo operativo</span><strong>6.0 h</strong></div>
-      <div class="case-row"><span>Vehículos utilizados</span><strong>4</strong></div>
-      <div class="case-row"><span>Entregas</span><strong>18</strong></div>
-      <div class="case-row"><span>Problema principal</span><strong>Rutas cruzadas</strong></div>
+
+      <div class="case-row">
+        <span>Distancia diaria</span>
+        <strong>142 km</strong>
+      </div>
+
+      <div class="case-row">
+        <span>Tiempo operativo</span>
+        <strong>6.0 h</strong>
+      </div>
+
+      <div class="case-row">
+        <span>Vehículos utilizados</span>
+        <strong>4</strong>
+      </div>
+
+      <div class="case-row">
+        <span>Entregas</span>
+        <strong>18</strong>
+      </div>
+
+      <div class="case-row">
+        <span>Problema principal</span>
+        <strong>Rutas cruzadas</strong>
+      </div>
     </div>
 
     <div class="case-card after">
       <div class="case-label">Después</div>
+
       <h3>Rutas optimizadas por vehículo</h3>
-      <div class="case-row"><span>Distancia diaria</span><strong>97 km</strong></div>
-      <div class="case-row"><span>Tiempo operativo</span><strong>4.8 h</strong></div>
-      <div class="case-row"><span>Vehículos utilizados</span><strong>3</strong></div>
-      <div class="case-row"><span>Entregas</span><strong>18</strong></div>
-      <div class="case-row"><span>Resultado</span><strong>Menos costo y más control</strong></div>
+
+      <div class="case-row">
+        <span>Distancia diaria</span>
+        <strong>97 km</strong>
+      </div>
+
+      <div class="case-row">
+        <span>Tiempo operativo</span>
+        <strong>4.8 h</strong>
+      </div>
+
+      <div class="case-row">
+        <span>Vehículos utilizados</span>
+        <strong>3</strong>
+      </div>
+
+      <div class="case-row">
+        <span>Entregas</span>
+        <strong>18</strong>
+      </div>
+
+      <div class="case-row">
+        <span>Resultado</span>
+        <strong>Menos costo y más control</strong>
+      </div>
     </div>
+
   </div>
 
   <div class="savings-band">
@@ -892,46 +1211,102 @@
     </span>
     <strong>31% menos distancia</strong>
   </div>
+
 </section>
 
 <section class="section" id="proceso">
+
   <div class="section-head">
     <div class="eyebrow">Proceso</div>
-    <h2 class="title">Cómo funciona el diagnóstico.</h2>
+
+    <h2 class="title">
+      Cómo funciona el diagnóstico.
+    </h2>
+
     <p class="subtitle">
       Partimos con información simple. No necesitas implementar un sistema completo para saber si existe oportunidad de ahorro.
     </p>
   </div>
 
   <div class="steps">
-    <div class="step"><div class="step-number">1</div><h3>Envías tus rutas</h3><p>Puede ser un Excel, una lista de direcciones, zonas de reparto o planificación actual.</p></div>
-    <div class="step"><div class="step-number">2</div><h3>Analizamos la operación</h3><p>Revisamos distancias, tiempos, cantidad de vehículos, entregas y restricciones operacionales.</p></div>
-    <div class="step"><div class="step-number">3</div><h3>Optimizamos recorridos</h3><p>Generamos rutas ordenadas por vehículo para disminuir traslados innecesarios.</p></div>
-    <div class="step"><div class="step-number">4</div><h3>Recibes resultados</h3><p>Entregamos mapa, comparación antes/después, métricas y recomendaciones accionables.</p></div>
+    <div class="step">
+      <div class="step-number">1</div>
+      <h3>Envías tus rutas</h3>
+      <p>Puede ser un Excel, una lista de direcciones, zonas de reparto o planificación actual.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-number">2</div>
+      <h3>Analizamos la operación</h3>
+      <p>Revisamos distancias, tiempos, cantidad de vehículos, entregas y restricciones operacionales.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-number">3</div>
+      <h3>Optimizamos recorridos</h3>
+      <p>Generamos rutas ordenadas por vehículo para disminuir traslados innecesarios.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-number">4</div>
+      <h3>Recibes resultados</h3>
+      <p>Entregamos mapa, comparación antes/después, métricas y recomendaciones accionables.</p>
+    </div>
   </div>
+
 </section>
 
 <section class="section" id="entregables">
+
   <div class="section-head">
     <div class="eyebrow">Entregables</div>
-    <h2 class="title">Qué recibe tu empresa.</h2>
+
+    <h2 class="title">
+      Qué recibe tu empresa.
+    </h2>
+
     <p class="subtitle">
       El resultado debe ser entendible para gerencia, operación y choferes. Por eso entregamos información visual, simple y utilizable.
     </p>
   </div>
 
   <div class="deliverables">
-    <div class="deliverable"><div class="deliverable-icon">↗</div><h3>Rutas optimizadas</h3><p>Orden de visitas o entregas por vehículo, considerando restricciones operacionales.</p></div>
-    <div class="deliverable"><div class="deliverable-icon">▦</div><h3>Mapa visual</h3><p>Mapa por colores para revisar recorridos, zonas, cruces y distribución de la flota.</p></div>
-    <div class="deliverable"><div class="deliverable-icon">◷</div><h3>Métricas claras</h3><p>Kilómetros, tiempo estimado, cantidad de entregas, vehículos usados y utilización.</p></div>
-    <div class="deliverable"><div class="deliverable-icon">✓</div><h3>Reporte ejecutivo</h3><p>Resumen antes/después para tomar decisiones rápidas sobre operación y ahorro.</p></div>
+    <div class="deliverable">
+      <div class="deliverable-icon">↗</div>
+      <h3>Rutas optimizadas</h3>
+      <p>Orden de visitas o entregas por vehículo, considerando restricciones operacionales.</p>
+    </div>
+
+    <div class="deliverable">
+      <div class="deliverable-icon">▦</div>
+      <h3>Mapa visual</h3>
+      <p>Mapa por colores para revisar recorridos, zonas, cruces y distribución de la flota.</p>
+    </div>
+
+    <div class="deliverable">
+      <div class="deliverable-icon">◷</div>
+      <h3>Métricas claras</h3>
+      <p>Kilómetros, tiempo estimado, cantidad de entregas, vehículos usados y utilización.</p>
+    </div>
+
+    <div class="deliverable">
+      <div class="deliverable-icon">✓</div>
+      <h3>Reporte ejecutivo</h3>
+      <p>Resumen antes/después para tomar decisiones rápidas sobre operación y ahorro.</p>
+    </div>
   </div>
+
 </section>
 
 <section class="section">
+
   <div class="section-head">
     <div class="eyebrow">Industrias</div>
-    <h2 class="title">Diseñado para operaciones reales.</h2>
+
+    <h2 class="title">
+      Diseñado para operaciones reales.
+    </h2>
+
     <p class="subtitle">
       Navix es útil para empresas que todos los días deben decidir qué vehículo sale, hacia dónde va y en qué orden.
     </p>
@@ -947,13 +1322,20 @@
     <div class="industry">Insumos industriales</div>
     <div class="industry">E-commerce local</div>
   </div>
+
 </section>
 
 <section class="section" id="oferta">
+
   <div class="offer">
+
     <div class="offer-main">
       <div class="eyebrow">Oferta inicial</div>
-      <h2>Diagnóstico de rutas para validar ahorro.</h2>
+
+      <h2>
+        Diagnóstico de rutas para validar ahorro.
+      </h2>
+
       <p>
         Ideal para empresas que quieren saber si su planificación actual está generando sobrecostos antes de invertir en una implementación mayor.
       </p>
@@ -969,9 +1351,14 @@
 
     <div class="offer-price">
       <div class="eyebrow">Diagnóstico rápido</div>
-      <h2>Primer análisis operativo</h2>
 
-      <div class="price">$49.990 <small>CLP</small></div>
+      <h2>
+        Primer análisis operativo
+      </h2>
+
+      <div class="price">
+        $49.990 <small>CLP</small>
+      </div>
 
       <p>
         Una forma rápida de detectar si tu empresa puede reducir kilómetros, combustible y tiempo operativo.
@@ -979,6 +1366,7 @@
 
       <div class="payment-box">
         <h3>Métodos de pago</h3>
+
         <div class="payment-grid">
           <div><span></span>Transferencia bancaria disponible</div>
           <div><span></span>Webpay próximamente</div>
@@ -987,11 +1375,15 @@
         </div>
       </div>
 
-      <div class="company-badge">Empresa en proceso de formalización comercial</div>
+      <div class="company-badge">
+        Empresa en proceso de formalización comercial
+      </div>
 
       <div class="buttons">
-        <a class="btn primary" href="https://wa.me/56973860127?text=Hola%20Navix%20Labs%2C%20quiero%20reservar%20un%20diagn%C3%B3stico%20de%20rutas%20por%20%2449.990%20y%20conocer%20las%20opciones%20de%20pago.%0A%0ANombre%3A%20%0AEmpresa%3A%20%0ARubro%3A%20%0ACiudad%3A%20%0ACantidad%20de%20veh%C3%ADculos%3A%20%0ACantidad%20aprox.%20de%20entregas%20diarias%3A%20%0A%C2%BFTienen%20las%20rutas%20en%20Excel%3F%3A%20" target="_blank">
-          Reservar diagnóstico →
+        <a class="btn primary"
+        href="https://wa.me/56973860127?text=Hola%20Navix%20Labs%2C%20quiero%20reservar%20un%20diagn%C3%B3stico%20de%20rutas%20por%20%2449.990%20y%20conocer%20las%20opciones%20de%20pago.%0A%0ANombre%3A%20%0AEmpresa%3A%20%0ARubro%3A%20%0ACiudad%3A%20%0ACantidad%20de%20veh%C3%ADculos%3A%20%0ACantidad%20aprox.%20de%20entregas%20diarias%3A%20%0A%C2%BFTienen%20las%20rutas%20en%20Excel%3F%3A%20"
+        target="_blank">
+        Reservar diagnóstico →
         </a>
       </div>
 
@@ -999,29 +1391,41 @@
         Cuando la integración de pago online esté disponible, este botón será reemplazado por pago directo vía Webpay o link de pago.
       </div>
     </div>
+
   </div>
+
 </section>
 
 <div class="final-cta" id="contacto">
+
   <div>
-    <h2>¿Quieres saber cuánto puede ahorrar tu operación?</h2>
+    <h2>
+      ¿Quieres saber cuánto puede ahorrar tu operación?
+    </h2>
+
     <p>
       Envíanos una muestra de tus rutas y revisamos si existe una oportunidad real de reducir kilómetros, tiempo y costos.
     </p>
   </div>
 
   <div class="buttons">
-    <a class="btn primary" href="https://wa.me/56973860127?text=Hola%20Navix%20Labs%2C%20quiero%20solicitar%20un%20diagn%C3%B3stico%20de%20rutas.%0A%0ANombre%3A%20%0AEmpresa%3A%20%0ARubro%3A%20%0ACiudad%3A%20%0ACantidad%20de%20veh%C3%ADculos%3A%20%0ACantidad%20aprox.%20de%20entregas%20diarias%3A%20%0A%C2%BFTienen%20las%20rutas%20en%20Excel%3F%3A%20" target="_blank">
-      Solicitar por WhatsApp
+    <a class="btn primary"
+    href="https://wa.me/56973860127?text=Hola%20Navix%20Labs%2C%20quiero%20solicitar%20un%20diagn%C3%B3stico%20de%20rutas.%0A%0ANombre%3A%20%0AEmpresa%3A%20%0ARubro%3A%20%0ACiudad%3A%20%0ACantidad%20de%20veh%C3%ADculos%3A%20%0ACantidad%20aprox.%20de%20entregas%20diarias%3A%20%0A%C2%BFTienen%20las%20rutas%20en%20Excel%3F%3A%20"
+    target="_blank">
+    Solicitar por WhatsApp
     </a>
 
-    <a class="btn secondary" href="https://mail.google.com/mail/?view=cm&fs=1&to=contacto@navixlabs.cl&su=Diagn%C3%B3stico%20de%20rutas&body=Hola%20Navix%20Labs%2C%20quiero%20solicitar%20un%20diagn%C3%B3stico%20de%20rutas.%0A%0ANombre%3A%0AEmpresa%3A%0ARubro%3A%0ACiudad%3A%0ACantidad%20de%20veh%C3%ADculos%3A%0ACantidad%20aprox.%20de%20entregas%20diarias%3A%0A%C2%BFTienen%20las%20rutas%20en%20Excel%3F%3A%0A" target="_blank">
-      Enviar correo
+    <a class="btn secondary"
+    href="https://mail.google.com/mail/?view=cm&fs=1&to=contacto@navixlabs.cl&su=Diagn%C3%B3stico%20de%20rutas&body=Hola%20Navix%20Labs%2C%20quiero%20solicitar%20un%20diagn%C3%B3stico%20de%20rutas.%0A%0ANombre%3A%0AEmpresa%3A%0ARubro%3A%0ACiudad%3A%0ACantidad%20de%20veh%C3%ADculos%3A%0ACantidad%20aprox.%20de%20entregas%20diarias%3A%0A%C2%BFTienen%20las%20rutas%20en%20Excel%3F%3A%0A"
+    target="_blank">
+    Enviar correo
     </a>
   </div>
+
 </div>
 
 <footer>
+
   <div class="footer-left">
     <img src="logo.png" alt="Navix Labs">
     <span>© 2026 Navix Labs · Chile</span>
@@ -1032,8 +1436,11 @@
     <a href="#caso">Caso</a>
     <a href="#proceso">Proceso</a>
     <a href="#oferta">Oferta</a>
-    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contacto@navixlabs.cl" target="_blank">contacto@navixlabs.cl</a>
+    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contacto@navixlabs.cl" target="_blank">
+      contacto@navixlabs.cl
+    </a>
   </div>
+
 </footer>
 
 </div>
